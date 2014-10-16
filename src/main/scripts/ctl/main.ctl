@@ -348,7 +348,13 @@
                     <ctl:message>[FAIL]: Unable to create proxy endpoints.</ctl:message>
                     <ctl:fail/>
                 </xsl:otherwise>
-            </xsl:choose>
+         </xsl:choose>
+	<xsl:variable name="dir" select="ctl:getSessionDir()" />
+
+	<xsl:if test="(not(doc-available(concat($dir,'/WMS1-GetCapabilities.xml')))) or (not(doc-available(concat($dir,'/WMS1-GetMap.xml')))) or (not(doc-available(concat($dir,'/WMS1-GetFeatureInfo.xml'))))"> 
+                 <ctl:message><xsl:value-of select="ctl:getSessionDir()"/></ctl:message>
+                <ctl:fail/>
+            </xsl:if>
         </ctl:code>
     </ctl:test>
 
