@@ -1029,7 +1029,7 @@
       </xsl:choose>
       <xsl:variable name="dir" select="ctl:getSessionDir()" />
 
-      <xsl:if test="(not(doc-available(concat($dir,'/test_data/WMS1-GetCapabilities.xml')))) or (not(doc-available(concat($dir,'/test_data/WMS1-GetMap.xml')))) or (not(doc-available(concat($dir,'/test_data/WMS1-GetFeatureInfo.xml'))))"> 
+      <xsl:if test="(not(doc-available(concat($dir,'/test_data/WMS1-GetCapabilitiesPass.xml')))) or (not(doc-available(concat($dir,'/test_data/WMS1-GetMapPass.xml')))) or (not(doc-available(concat($dir,'/test_data/WMS1-GetFeatureInfoPass.xml'))))"> 
         <ctl:fail/>
       </xsl:if>
     </ctl:code>
