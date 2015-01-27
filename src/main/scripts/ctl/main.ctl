@@ -132,7 +132,7 @@
             </div>
             <legend style="font-family: sans-serif; color: #000099; 
 			                 background-color:#F0F8FF; border-style: solid; 
-                       border-width: medium; padding:4px">WMS-Client Conformence Level :</legend>
+                       border-width: medium; padding:4px">WMS-Client Conformance:</legend>
             <fieldset style="background:#ccffff">
               <div id="WMS-Client">
                 <img src="../../../../images/minus.png" name="image1" id="WMS-Client__result" align="middle" onclick="toggleDiv(this);"/>
@@ -140,144 +140,155 @@
                 <b>Test WMS-Client 1.3</b>
               </div>
               <div id="WMS-Client_result">
-                <div id="capability" style="margin-left:20px;">
+              <div id="Basic" style="margin-left:20px;">
+                <img src="../../../../images/minus.png" name="image1" id="Basic__result" align="middle" onclick="toggleDiv(this);"/>
+                <b>Basic Test</b>
+              </div>
+              <div id="Basic_result">
+                <div id="capability" style="margin-left:40px;">
                   <img src="../../../../images/minus.png" name="image1" id="capability__result" align="middle" onclick="toggleDiv(this);"></img>
                   <img src="../../../../images/warning.png" id="capability_img" align="middle" alt="Begin" />
                   <b>Perform at least one GetCapabilities request</b>
                 </div>
                             
-                <div id="capability_result" style="margin-left:40px;">
+                <div id="capability_result" style="margin-left:60px;">
                 </div>
                             
-                <div id="map" style="margin-left:20px;">
+                <div id="map" style="margin-left:40px;">
                   <img src="../../../../images/minus.png" name="image1" id="map__result" align="middle" onclick="toggleDiv(this);"></img>
                   <img src="../../../../images/warning.png" id="map_img" align="middle" alt="Begin" />
                   <b>Perform GetMap request for all the layers</b>
                 </div>
                 <div id="map_result">
                             
-                  <div id="Autos" style="margin-left:40px;">
+                  <div id="Autos" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Autos_img" align="middle" alt="Begin" ></img>
                     <b>cite:Autos</b>
                   </div>
                             
-                  <div id="Autos_result" style="margin-left:60px;">
+                  <div id="Autos_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="BasicPolygons" style="margin-left:40px;">
+                  <div id="BasicPolygons" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="BasicPolygons_img" align="middle" alt="Begin" ></img>
                     <b>cite:BasicPolygons</b>
                   </div>
                             
-                  <div id="BasicPolygons_result" style="margin-left:60px;">
+                  <div id="BasicPolygons_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="Bridges" style="margin-left:40px;">
+                  <div id="Bridges" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Bridges_img" align="middle" alt="Begin" ></img>
                     <b>cite:Bridges</b>
                   </div>
                             
-                  <div id="Bridges_result" style="margin-left:60px;">
+                  <div id="Bridges_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="BuildingCenters" style="margin-left:40px;">
+                  <div id="BuildingCenters" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="BuildingCenters_img" align="middle" alt="Begin" ></img>
                     <b>cite:BuildingCenters</b>
                   </div>
                             
-                  <div id="BuildingCenters_result" style="margin-left:60px;">
+                  <div id="BuildingCenters_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="Buildings" style="margin-left:40px;">
+                  <div id="Buildings" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Buildings_img" align="middle" alt="Begin" ></img>
                     <b>cite:Buildings</b>
                   </div>
                             
-                  <div id="Buildings_result" style="margin-left:60px;">
+                  <div id="Buildings_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="DividedRoutes" style="margin-left:40px;">
+                  <div id="DividedRoutes" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="DividedRoutes_img" align="middle" alt="Begin" ></img>
                     <b>cite:DividedRoutes</b>
                   </div>
                             
-                  <div id="DividedRoutes_result" style="margin-left:60px;">
+                  <div id="DividedRoutes_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="Forests" style="margin-left:40px;">
+                  <div id="Forests" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Forests_img" align="middle" alt="Begin" ></img>
                     <b>cite:Forests</b>
                   </div>
                             
-                  <div id="Forests_result" style="margin-left:60px;">
+                  <div id="Forests_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="Lakes" style="margin-left:40px;">
+                  <div id="Lakes" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Lakes_img" align="middle" alt="Begin" ></img>
                     <b>cite:Lakes</b>
                   </div>
                             
-                  <div id="Lakes_result" style="margin-left:60px;">
+                  <div id="Lakes_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="MapNeatline" style="margin-left:40px;">
+                  <div id="MapNeatline" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="MapNeatline_img" align="middle" alt="Begin" ></img>
                     <b>cite:MapNeatline</b>
                   </div>
                             
-                  <div id="MapNeatline_result" style="margin-left:60px;">
+                  <div id="MapNeatline_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="NamedPlaces" style="margin-left:40px;">
+                  <div id="NamedPlaces" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="NamedPlaces_img" align="middle" alt="Begin" ></img>
                     <b>cite:NamedPlaces</b>
                   </div>
                             
-                  <div id="NamedPlaces_result" style="margin-left:60px;">
+                  <div id="NamedPlaces_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="Ponds" style="margin-left:40px;">
+                  <div id="Ponds" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Ponds_img" align="middle" alt="Begin" ></img>
                     <b>cite:Ponds</b>
                   </div>
                             
-                  <div id="Ponds_result" style="margin-left:60px;">
+                  <div id="Ponds_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="RoadSegments" style="margin-left:40px;">
+                  <div id="RoadSegments" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="RoadSegments_img" align="middle" alt="Begin" ></img>
                     <b>cite:RoadSegments</b>
                   </div>
                             
-                  <div id="RoadSegments_result" style="margin-left:60px;">
+                  <div id="RoadSegments_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="Streams" style="margin-left:40px;">
+                  <div id="Streams" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Streams_img" align="middle" alt="Begin" ></img>
                     <b>cite:Streams</b>
                   </div>
                             
-                  <div id="Streams_result" style="margin-left:60px;">
+                  <div id="Streams_result" style="margin-left:80px;">
                   </div>
                             
-                  <div id="Terrain" style="margin-left:40px;">
+                  <div id="Terrain" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Terrain_img" align="middle" alt="Begin" ></img>
                     <b>cite:Terrain</b>
                   </div>
 
-                  <div id="Terrain_result" style="margin-left:60px;">
+                  <div id="Terrain_result" style="margin-left:80px;">
                   </div>
                                 
                 </div>
-                            
-                <div id="feature" style="margin-left:20px;">
+                </div>
+                <div id="Queryable" style="margin-left:20px;">
+                <img src="../../../../images/minus.png" name="image1" id="Queryable__result" align="middle" onclick="toggleDiv(this);"/>
+                <b>Queryable Test</b>
+                 </div>
+                 <div id="Queryable_result">            
+                <div id="feature" style="margin-left:40px;">
                   <img src="../../../../images/minus.png" name="image1" id="feature__result" align="middle" onclick="toggleDiv(this);"></img>
                   <img src="../../../../images/warning.png" id="feature_img" align="middle" alt="Begin" />
                   <b>Perform at least one GetFeatureInfo request</b>
                 </div> 
-                <div id="feature_result" style="margin-left:40px;">
+                <div id="feature_result" style="margin-left:60px;">
                                 
                 </div>
+              </div>
               </div>
               <div id="show"/>
             </fieldset>                        
@@ -950,9 +961,6 @@
                               if ($('#feature_img').attr("src").indexOf('fail') == -1) {
                                $('#feature_img').attr("src", success);
                               }
-                              if ($('#WMS-Client-result').attr("src").indexOf('warning') > -1) {
-                                $('#WMS-Client-result').attr("src", success);
-                              }
                               var data = {
                                 "id": id,
                                 "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
@@ -967,7 +975,6 @@
                             $('#feature_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                               <img src = "' + error + '" > </img>' + "  Request " + method + " (" + time + ") ....." + counter.Result + '</p > '));
                             $('#feature_img').attr("src", error);
-                            $('#WMS-Client-result').attr("src", error);
                             var data = {
                               "id": id,
                               "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
@@ -1029,7 +1036,7 @@
       </xsl:choose>
       <xsl:variable name="dir" select="ctl:getSessionDir()" />
 
-      <xsl:if test="(not(doc-available(concat($dir,'/test_data/WMS1-GetCapabilitiesPass.xml')))) or (not(doc-available(concat($dir,'/test_data/WMS1-GetMapPass.xml')))) or (not(doc-available(concat($dir,'/test_data/WMS1-GetFeatureInfoPass.xml'))))"> 
+      <xsl:if test="(not(doc-available(concat($dir,'/test_data/WMS1-GetCapabilitiesPass.xml')))) or (not(doc-available(concat($dir,'/test_data/WMS1-GetMapPass.xml'))))"> 
         <ctl:fail/>
       </xsl:if>
     </ctl:code>
