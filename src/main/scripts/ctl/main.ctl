@@ -25,6 +25,21 @@
   <ctl:test name="main:wms-client">
     <ctl:assertion>The WMS client submits valid requests.</ctl:assertion>
     <ctl:code>
+      <ctl:message>TestName : GetCapabilities</ctl:message>
+      <ctl:message>
+        Clause : A.1.1.2</ctl:message>
+        <ctl:message>
+          Purpose : Verify that a basic WMS client satisfies all requirements for a GetCapabilities request.</ctl:message>
+       <ctl:message>TestName : GetMap</ctl:message>
+        <ctl:message>Clause : A.1.1.3</ctl:message>
+       <ctl:message>Purpose : Verify that a basic WMS client satisfies all requirements for a GetMap request.</ctl:message>
+     <ctl:message>TestName : GetFeatureInfo</ctl:message>
+       <ctl:message>Clause : A.2</ctl:message>
+       <ctl:message>Purpose : 
+         1. Verify that a basic WMS client satisfies all requirements for a GetFeatureInfo request.
+         2. Verify that a WMS interface satisfies all requirements for the operation GetFeatureInfo.
+       </ctl:message>
+            
       <xsl:variable name="wms-url" 
                           select="'http://cite.lat-lon.de/deegree-webservices-3.3.6-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'" />
       <xsl:variable name="capabilities">
@@ -35,7 +50,7 @@
           <ctl:method>GET</ctl:method>
         </ctl:request>
       </xsl:variable>
-
+  
       <xsl:variable name="monitor-urls">
         <xsl:for-each select="$capabilities/wms:WMS_Capabilities/wms:Capability/wms:Request">
           <xsl:for-each select="wms:GetCapabilities|wms:GetMap|wms:GetFeatureInfo">
@@ -350,126 +365,162 @@
                 "id": 1,
                 "Name": "Test WMS-Client 1.3",
                 "ParentID": 0,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "1__result",
+                "node_name":"WMS-Client"
               };
               wmsClient.push(data);
               var data = {
                 "id": 2,
                 "Name": "Perform at least one GetCapabilities request",
                 "ParentID": 1,
-                "image": ""
+                "image": "../../../../images/warning.png",
+                "node_id": "2__result",
+                "node_name":"GetCapabilities"
               };
               wmsClient.push(data);
               var data = {
                 "id": 3,
                 "Name": "Perform GetMap request for all the layers",
                 "ParentID": 1,
-                "image": ""
+                "image": "../../../../images/warning.png",
+                "node_id": "3__result",
+                "node_name":"GetMap"
               };
               wmsClient.push(data);
               var data = {
                 "id": 4,
                 "Name": "cite:Autos",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "4__result",
+                "node_name":"cite:Autos"
               };
               wmsClient.push(data);
               var data = {
                 "id": 5,
                 "Name": "cite:BasicPolygons",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "5__result",
+                "node_name":"cite:BasicPolygons"
               };
               wmsClient.push(data);
               var data = {
                 "id": 6,
                 "Name": "cite:Bridges",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "6__result",
+                "node_name":"cite:Bridges"
               };
               wmsClient.push(data);
               var data = {
                 "id": 7,
                 "Name": "cite:BuildingCenters",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "7__result",
+                "node_name":"cite:BuildingCenters"
               };
               wmsClient.push(data);
               var data = {
                 "id": 8,
                 "Name": "cite:Buildings",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "8__result",
+                "node_name":"cite:Buildings"
               };
               wmsClient.push(data);
               var data = {
                 "id": 9,
                 "Name": "cite:DividedRoutes",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "9__result",
+                "node_name":"cite:DividedRoutes"
               };
               wmsClient.push(data);
               var data = {
                 "id": 10,
                 "Name": "cite:Forests",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "10__result",
+                "node_name":"cite:Forests"
               };
               wmsClient.push(data);
               var data = {
                 "id": 11,
                 "Name": "cite:Lakes",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "11__result",
+                "node_name":"cite:Lakes"
               };
               wmsClient.push(data);
               var data = {
                 "id": 12,
                 "Name": "cite:MapNeatline",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "12__result",
+                "node_name":"cite:MapNeatline"
               };
               wmsClient.push(data);
               var data = {
                 "id": 13,
                 "Name": "cite:NamedPlaces",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "13__result",
+                "node_name":"cite:NamedPlaces"
               };
               wmsClient.push(data);
               var data = {
                 "id": 14,
                 "Name": "cite:Ponds",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "14__result",
+                "node_name":"cite:Ponds"
               };
               wmsClient.push(data);
               var data = {
                 "id": 15,
                 "Name": "cite:RoadSegments",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "15__result",
+                "node_name":"cite:RoadSegments"
               };
               wmsClient.push(data);
               var data = {
                 "id": 16,
                 "Name": "cite:Streams",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "16__result",
+                "node_name":"cite:Streams"
               };
               wmsClient.push(data);
               var data = {
                 "id": 17,
                 "Name": "cite:Terrain",
                 "ParentID": 3,
-                "image": "../../../../images/warning.png"
+                "image": "../../../../images/warning.png",
+                "node_id": "17__result",
+                "node_name":"cite:Terrain"
               };
               wmsClient.push(data);
               var data = {
                 "id": 18,
                 "Name": "Perform at least one GetFeatureInfo request",
                 "ParentID": 1,
-                "image": ""
+                "image": "../../../../images/warning.png",
+                "node_id": "18__result",
+                "node_name":"GetFeatureInfo"
               };
               wmsClient.push(data);
               var id = 19;
@@ -557,7 +608,8 @@
                                 "id": id,
                                 "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                 "ParentID": 2,
-                                "image": success
+                                "image": success,
+                                "indent":2
                               };
                               wmsClient.push(data);
                               wmsClient[0].image = success;
@@ -578,7 +630,8 @@
                                 "id": id,
                                 "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                 "ParentID": 2,
-                                "image": error
+                                "image": error,
+                                "indent":2
                               };
                               wmsClient.push(data);
                               wmsClient[0].image = error;
@@ -618,10 +671,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 4,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[4].image = success;
+                                    wmsClient[3].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -641,10 +695,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 5,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[5].image = success;
+                                    wmsClient[4].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -664,10 +719,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 6,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[6].image = success;
+                                    wmsClient[5].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -687,10 +743,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 7,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[7].image = success;
+                                    wmsClient[6].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -710,10 +767,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 8,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[8].image = success;
+                                    wmsClient[7].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -733,10 +791,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 9,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[9].image = success;
+                                    wmsClient[8].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -756,10 +815,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 10,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[10].image = success;
+                                    wmsClient[9].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -779,10 +839,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 11,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[11].image = success;
+                                    wmsClient[10].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -802,10 +863,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 12,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[12].image = success;
+                                    wmsClient[11].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -825,10 +887,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 13,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[13].image = success;
+                                    wmsClient[12].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -848,10 +911,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 14,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[14].image = success;
+                                    wmsClient[13].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -871,10 +935,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 15,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[15].image = success;
+                                    wmsClient[14].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -894,10 +959,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 16,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[16].image = success;
+                                    wmsClient[15].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -917,10 +983,11 @@
                                       "id": id,
                                       "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                       "ParentID": 17,
-                                      "image": success
+                                      "image": success,
+                                      "indent":4
                                     };
                                     wmsClient.push(data);
-                                    wmsClient[17].image = success;
+                                    wmsClient[16].image = success;
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
@@ -965,7 +1032,8 @@
                                 "id": id,
                                 "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                                 "ParentID": 18,
-                                "image": success
+                                "image": success,
+                                "indent":2
                               };
                               wmsClient.push(data);
                               wmsClient[0].image = success;
@@ -979,7 +1047,8 @@
                               "id": id,
                               "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
                               "ParentID": 18,
-                              "image": error
+                              "image": error,
+                              "indent":2
                             };
                             wmsClient.push(data);
                             wmsClient[0].image = error;
