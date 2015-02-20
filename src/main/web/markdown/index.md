@@ -1,42 +1,58 @@
-# OGC Web Map Service Client Executable Test Suite
-
-## Overview
-
-The OGC Web Map Service Client Test-Suite provides the Executable Test Script (ETS) to test implementations against the following specification(s):
-
-* Web Map Server Implementation Specification, version 1.3.0 [OGC 06-042 (or ISO [19128:2005](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=32546))]([PDF version](http://portal.opengeospatial.org/files/?artifact_id=14416))
-
-
-## What is tested
-
-In order to test a client, this test suite creates an intercepting proxy for interacting with the WMS 1.3.0 reference implementation available at <http://cite.lat-lon.de/deegree-webservices-3.3.6-2/services/wms?service=WMS&version=1.3.0&request=GetCapabilities>. 
-
-The test test suite will record the request performed by the client to check if the client has performed correctly all the required operations, as specified in the Annex A of the [OGC 06-042](http://portal.opengeospatial.org/files/?artifact_id=14416). 
-
-The Annex A list two conformance classes that only apply for clients:
-
-* A.1.1 Basic WMS Client
-
-   * A.1.1.1 Basic service elements
-   * A.1.1.2 GetCapabilities request
-   * A.1.1.3 GetMap request
-
-* A.2.1 Client for queryable WMS – GetFeatureInfo request
-
-
-The client is required to perform the following minimum operations, based on the Annex A:
-
-
-* Get Capabilities: Perform **at least** one valid request
-* GetMap: Perform **all** get map request for all the layers advertise in the server GetCapabilities document.
-* GetFeatureInfo: Perform **at least** one GetfeatureInfo valid request
-
-If at any point in time while the client is interacting with the server, the client performs a non-valid request, the test will fail.
-
+The tester configures the client to use the proxy endpoint, which will then
+inspect all incoming service requests. Each of the requests that the client
+submits will be validated. The client is expected to fully exercise the target
+service with all advertised options. A brief coverage report will indicate
+which supported service capabilities were not invoked during the test session.
+Request Method Options
+GetCapabilities
+GET
+`format`
+    text/xml
+GetMap
+GET
+`format`
+    image/png
+    image/png; subtype=8bit
+    image/png; mode=8bit
+    image/gif
+    image/jpeg
+    image/tiff
+    image/x-ms-bmp
+`layers`
+    cite:Autos
+    cite:BasicPolygons
+    cite:Bridges
+    cite:BuildingCenters
+    cite:Buildings
+    cite:DividedRoutes
+    cite:Forests
+    cite:Lakes
+    cite:MapNeatline
+    cite:NamedPlaces
+    cite:Ponds
+    cite:RoadSegments
+    cite:Streams
+    cite:Terrain
+GetFeatureInfo
+GET
+`info_format`
+    text/xml
+    text/plain
+    text/html
+    application/gml+xml; version=2.1
+    application/gml+xml; version=3.0
+    application/gml+xml; version=3.1
+    application/gml+xml; version=3.2
+    text/xml; subtype=gml/2.1.2
+    text/xml; subtype=gml/3.0.1
+    text/xml; subtype=gml/3.1.1
+    text/xml; subtype=gml/3.2.1
+    application/vnd.ogc.gml
+`query_layers`
+    See GetMap layers
 ## Capabilities not tested
 The client capabilities listed below are **not** currently tested. The
 relevant specification references are enclosed in square brackets.
-
   * GetMap: Valid BBOX extent [cl. 6.7.4, 7.3.3.6]
   * GetMap: BBOX values consistent with CRS [cl. 7.3.3.6]
   * GetCapabilities request with Format parameter [cl. 7.2.3.1]
@@ -51,7 +67,6 @@ relevant specification references are enclosed in square brackets.
   * Submit POST request [cl. 6.3.4]
   * GetMap request with TIME param [cl. 7.3.3.12]
   * GetMap request with ELEVATION param [cl. 7.3.3.13]
-
 ## Test identification
 The executable test cases that comprise this test suite are briefly summarized
 below.
@@ -220,22 +235,5 @@ Total number of tests in this group: 10
 **Test Assertion: **The value of the J parameter is an integer between 0 and the maximum value of the i axis (HEIGHT-1). 
 **List of parameters:**
   * **request: **
-## Release notes
-Release notes are available [here](relnotes.html).
-
-
-##  License
-
-[Apache License, Version 2.0](http://opensource.org/licenses/Apache-2.0 "Apache License")
-
-## Bugs
-
-Issue tracker is available at [github](https://github.com/opengeospatial/ets-wms-client13/issues)
-
-## Mailing Lists
-
-The [cite-forum](http://cite.opengeospatial.org/forum) is where software developers discuss issues and solutions related to OGC tests. 
-
-
 ## Release notes
 Release notes are available [here](relnotes.html).

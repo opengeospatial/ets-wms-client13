@@ -4,8 +4,8 @@ The OGC OGC Web Map Service Client Test-Suite provides the Executable Test Scrip
 
 OGC 06-042 (also known as ISO 19128:2005) Specification, http://www.opengeospatial.org/standards/wms
 
+Detailed information about this test suite is available [here](http://opengeospatial.github.io/ets-wms-client13).
 
-Detailed information about this test suite is available at  http://htmlpreview.github.com/?https://github.com/opengeospatial/ets-wms-client13/blob/master/src/main/web/index.html
 
 ## License
 
@@ -15,12 +15,10 @@ Detailed information about this test suite is available at  http://htmlpreview.g
 
 This test is build using [Apache Maven](http://maven.apache.org/) To 
 build the test suite run maven from the root directory.
+
    % mvn install
      
-## To test an application:
-
-To test an application check the instructions at the [CITE wiki](http://cite.opengeospatial.org/easytesting).
-
+Follow the [TEAM ENGINE instructions](http://opengeospatial.github.io/teamengine/installation.html) to install and run the tests in TEAM ENGINE.
 
 ## Bugs
 

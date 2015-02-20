@@ -20,11 +20,19 @@
     <src>./img/ogc-logo.png</src>
     <href>http://cite.opengeospatial.org/</href>
   </bannerLeft>
+  <bannerRight>
+    <name>${project.name}</name>
+  </bannerRight>
 
   <body>
     <links>
-      <item name="Issues" href="https://github.com/opengeospatial/ets-wms-client13/issues"/>
+      <item name="Issues" href="https://github.com/opengeospatial/${project.artifactId}/issues"/>
     </links>
+    <menu name="Documentation">
+      <item href="index.html" name="Overview" />
+      <item href="relnotes.html" name="Release Notes" />
+    </menu>
+    <menu ref="reports" />
 
   </body>
 </project>
