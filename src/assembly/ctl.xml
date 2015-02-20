@@ -18,9 +18,6 @@
     <fileSet>
       <directory>${project.basedir}/src/main/resources</directory>
       <outputDirectory>resources</outputDirectory>
-      <excludes>
-        <exclude>data/</exclude>
-      </excludes>
     </fileSet>
   </fileSets>
   <files>

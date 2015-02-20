@@ -1,8 +1,8 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
-### 1.0 (2015-02-20)
+### 0.6 (2015-02-20)
 
-   * Clean documentation and prepare release
+   * Clean documentation and prepare for release
    * [4](https://github.com/opengeospatial/ets-wms-client13/issues/4) - Test should report on the console the request that are required to perform by the client
    * [3](https://github.com/opengeospatial/ets-wms-client13/issues/3) - Improve failure reporting
    

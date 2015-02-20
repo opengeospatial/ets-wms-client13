@@ -9,17 +9,18 @@ The OGC Web Map Service Client Test-Suite provides the Executable Test Script (E
 
 ## What is tested
 
-In order to test a client, this test suite creates an intercepting proxy for interacting with the WMS 1.3.0 reference implementation available at <http://cite.lat-lon.de/deegree-webservices-3.3.6-2/services/wms?service=WMS&version=1.3.0&request=GetCapabilities>. 
+In order to test a client, this test suite creates an intercepting proxy for interacting with the WMS 1.3.0 reference implementation available at:
+
+   <http://cite.lat-lon.de/deegree-webservices-3.3.6-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities 
 
 The test test suite will record the request performed by the client to check if the client has performed correctly all the required operations, as specified in the Annex A of the [OGC 06-042](http://portal.opengeospatial.org/files/?artifact_id=14416). 
 
 The Annex A list two conformance classes that only apply for clients:
 
-* A.1.1 Basic WMS Client
-
-   * A.1.1.1 Basic service elements
-   * A.1.1.2 GetCapabilities request
-   * A.1.1.3 GetMap request
+* A.1.1 Basic WMS Client:
+      * A.1.1.1 Basic service elements
+      * A.1.1.2 GetCapabilities request
+      * A.1.1.3 GetMap request
 
 * A.2.1 Client for queryable WMS – GetFeatureInfo request
 
@@ -220,9 +221,6 @@ Total number of tests in this group: 10
 **Test Assertion: **The value of the J parameter is an integer between 0 and the maximum value of the i axis (HEIGHT-1). 
 **List of parameters:**
   * **request: **
-## Release notes
-Release notes are available [here](relnotes.html).
-
 
 ##  License
 
