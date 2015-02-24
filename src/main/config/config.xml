@@ -25,12 +25,6 @@
         </sources>
         <resources>wms-client/${spec-version}/resources</resources>
         <webdir>wms-client/${spec-version}/site</webdir>
-        <profile>
-          <namespace-uri>urn:wms_client_test_suite/main</namespace-uri>
-          <prefix>main</prefix>
-          <local-name>client-coverage</local-name>
-          <title>Coverage reporting</title>
-        </profile>
       </revision>
     </version>
   </standard>

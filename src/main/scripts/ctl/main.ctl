@@ -133,7 +133,7 @@
                 <xsl:attribute name="href">
                   <xsl:value-of select="$wms-url"/>
                 </xsl:attribute>
-                <xsl:text>WMS 1.3 reference implementation</xsl:text>. 
+                <xsl:text>WMS 1.3 reference implementation.</xsl:text>
               </xsl:element>
               The client should perform the request presented in the box bellow. 
             </p>
@@ -301,7 +301,7 @@
                 </div>
                 <div id="Queryable" style="margin-left:20px;">
                 <img src="../../../../images/minus.png" name="image1" id="Queryable__result" align="middle" onclick="toggleDiv(this);"/>
-                <b>A.2.1 Client for queryable WMS – GetFeatureInfo request</b>
+                <b>A.2.1 Client for queryable WMS-GetFeatureInfo request</b>
                  </div>
                  <div id="Queryable_result">            
                 <div id="feature" style="margin-left:40px;">
