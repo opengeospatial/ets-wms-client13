@@ -25,17 +25,17 @@
   <ctl:test name="main:wms-client">
     <ctl:assertion>The WMS client submits valid requests.</ctl:assertion>
     <ctl:code>
-      <ctl:message>TestName : GetCapabilities</ctl:message>
+      <ctl:message>TestName: GetCapabilities</ctl:message>
       <ctl:message>
-        Clause : A.1.1.2</ctl:message>
+        Clause: A.1.1.2</ctl:message>
         <ctl:message>
-          Purpose : Verify that a basic WMS client satisfies all requirements for a GetCapabilities request.</ctl:message>
-       <ctl:message>TestName : GetMap</ctl:message>
-        <ctl:message>Clause : A.1.1.3</ctl:message>
-       <ctl:message>Purpose : Verify that a basic WMS client satisfies all requirements for a GetMap request.</ctl:message>
-     <ctl:message>TestName : GetFeatureInfo</ctl:message>
-       <ctl:message>Clause : A.2</ctl:message>
-       <ctl:message>Purpose : 
+          Purpose: Verify that a basic WMS client satisfies all requirements for a GetCapabilities request.</ctl:message>
+       <ctl:message>TestName: GetMap</ctl:message>
+        <ctl:message>Clause: A.1.1.3</ctl:message>
+       <ctl:message>Purpose: Verify that a basic WMS client satisfies all requirements for a GetMap request.</ctl:message>
+     <ctl:message>TestName: GetFeatureInfo</ctl:message>
+       <ctl:message>Clause: A.2</ctl:message>
+       <ctl:message>Purpose: 
          1. Verify that a basic WMS client satisfies all requirements for a GetFeatureInfo request.
          2. Verify that a WMS interface satisfies all requirements for the operation GetFeatureInfo.
        </ctl:message>
@@ -135,7 +135,7 @@
                 </xsl:attribute>
                 <xsl:text>WMS 1.3 reference implementation.</xsl:text>
               </xsl:element>
-              The client should perform the request presented in the box bellow. 
+              The client shall perform the request presented in the box bellow. 
             </p>
 
             <p>To start testing, configure the client application to use the following WMS 1.3 end point (the proxy endpoint):</p>

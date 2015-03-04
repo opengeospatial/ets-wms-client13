@@ -43,10 +43,10 @@
 
   <ctl:test name="gc:service">
     <ctl:param name="request"/>
-    <ctl:assertion>The value of the SERVICE parameter is "WMS".</ctl:assertion>
+    <ctl:assertion>The value of the SERVICE parameter shall be 'WMS' (All upper case).</ctl:assertion>
     <ctl:code>
       <xsl:if test="$request/ctl:param[fn:upper-case(@name)='SERVICE'] != 'WMS'">
-        <ctl:message>SERVICE=<xsl:value-of select="$request/ctl:param[fn:upper-case(@name)='SERVICE']"/></ctl:message>
+        <ctl:message>The SERVICE parameter value given was '<xsl:value-of select="$request/ctl:param[fn:upper-case(@name)='SERVICE']"/>'. It is not correct. Should be 'WMS' (All upper case).</ctl:message>
         <ctl:fail/>
       </xsl:if>
     </ctl:code>
