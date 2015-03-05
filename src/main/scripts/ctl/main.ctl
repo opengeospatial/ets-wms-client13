@@ -1101,7 +1101,7 @@
             </script>
             <br/>
             <br/>
-            <input type="submit" value="Stop testing" onclick="test()"/>
+            <input id="stopTest" type="submit" value="Stop testing" onclick="test()"/>
           </ctl:form>
         </xsl:when>
         <xsl:otherwise>
