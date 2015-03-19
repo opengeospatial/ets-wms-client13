@@ -12,12 +12,12 @@
   <ctl:test name="basic:mandatory-params">
     <ctl:param name="request"/>
     <ctl:param name="params"/>
-    <ctl:assertion>Each of the mandatory parameters is present.</ctl:assertion>
+    <ctl:assertion>Each of the mandatory parameters shall be present, (SERVICE=WMS and REQUEST=GetCapabilities).</ctl:assertion>
     <ctl:code>
       <xsl:for-each select="$params/param">
         <xsl:variable name="param" select="."/>
         <xsl:if test="not($request/ctl:param[fn:upper-case(@name)=$param])">
-          <ctl:message>No <xsl:value-of select="$param"/> parameter</ctl:message>
+          <ctl:message>Did not provide the <xsl:value-of select="$param"/> parameter.</ctl:message>
           <ctl:fail/>
         </xsl:if>
       </xsl:for-each>
@@ -26,7 +26,7 @@
 
   <ctl:test name="basic:version">
     <ctl:param name="request"/>
-    <ctl:assertion>The value of the VERSION parameter is "1.3.0".</ctl:assertion>
+    <ctl:assertion>The value of the VERSION parameter shall be "1.3.0".</ctl:assertion>
     <ctl:code>
       <xsl:if test="$request/ctl:param[fn:upper-case(@name)='VERSION'] != '1.3.0'">
         <ctl:message>VERSION=<xsl:value-of select="$request/ctl:param[fn:upper-case(@name)='VERSION']"/></ctl:message>
@@ -38,10 +38,10 @@
   <ctl:test name="basic:request">
     <ctl:param name="request"/>
     <ctl:param name="expected-value"/>
-    <ctl:assertion>The value of the REQUEST parameter is "{$expected-value}".</ctl:assertion>
+    <ctl:assertion>The value of the REQUEST parameter shall be "{$expected-value}".</ctl:assertion>
     <ctl:code>
       <xsl:if test="$request/ctl:param[fn:upper-case(@name)='REQUEST'] != $expected-value">
-        <ctl:message>REQUEST=<xsl:value-of select="$request/ctl:param[fn:upper-case(@name)='REQUEST']"/></ctl:message>
+        <ctl:message>The REQUEST parameter value given was '<xsl:value-of select="$request/ctl:param[fn:upper-case(@name)='REQUEST']"/>'. It should be <xsl:value-of select="$expected-value" /></ctl:message>
         <ctl:fail/>
       </xsl:if>
     </ctl:code>
