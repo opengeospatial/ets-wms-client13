@@ -23,6 +23,21 @@
       </xsl:for-each>
     </ctl:code>
   </ctl:test>
+  
+  <ctl:test name="basic:getMap-mandatory-params">
+    <ctl:param name="request"/>
+    <ctl:param name="params"/>
+    <ctl:assertion>Each of the mandatory parameters shall be present.</ctl:assertion>
+    <ctl:code>
+      <xsl:for-each select="$params/param">
+        <xsl:variable name="param" select="."/>
+        <xsl:if test="not($request/ctl:param[fn:upper-case(@name)=$param])">
+          <ctl:message>Did not provide the <xsl:value-of select="$param"/> parameter.</ctl:message>
+          <ctl:fail/>
+        </xsl:if>
+      </xsl:for-each>
+    </ctl:code>
+  </ctl:test>
 
   <ctl:test name="basic:version">
     <ctl:param name="request"/>

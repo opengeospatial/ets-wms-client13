@@ -18,7 +18,7 @@
         <ctl:param name="capabilities"/>
         <ctl:assertion>The client GetMap request is valid.</ctl:assertion>
         <ctl:code>
-            <ctl:call-test name="basic:mandatory-params">
+            <ctl:call-test name="basic:getMap-mandatory-params">
                 <ctl:with-param name="request" select="$request"/>
                 <ctl:with-param name="params">
                     <params>

@@ -365,7 +365,7 @@
                   type: "POST",
                   data: JSON.stringify(Client),
                   processData: false,
-                  contentType: false,
+                  contentType: "text/plain",
                   success: function() {},
                   error: function() {}
                 });
@@ -589,7 +589,7 @@
                   url: urlpath,
                   data: JSON.stringify(testData),
                   processData: false,
-                  contentType: false,
+                  contentType: "text/plain",
                   success: function(data) {
                     var jsonData = JSON.parse(data);
                     var text = "";
