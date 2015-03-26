@@ -321,7 +321,15 @@
               var url = location.href;
               var count = 0;
               var method = 1;
-              var result_url = url.split("teamengine");
+              var result_url = url.split("/");
+              var newURL="";
+              for(var i=0;i &lt; 4;i++){
+                if(newURL!=""){
+                  newURL=newURL+"/";
+                }
+                newURL=newURL+result_url[i];
+              }
+              newURL=newURL+"/";
               var j = 0;
               var k = 0;
               var wmsMapCount = 0;
@@ -331,7 +339,15 @@
                 var text = $('#WMS-Client_result').html();
                 var data = text;
                 var urlloc = location.href;
-                var result_url = urlloc.split("teamengine");
+                var result_url = urlloc.split("/");
+                var newURL="";
+                for(var i=0;i &lt; 4;i++){
+                  if(newURL!=""){
+                   newURL=newURL+"/";
+                   }
+                 newURL=newURL+result_url[i];
+                 }
+                newURL=newURL+"/";
                 var c_name = "User";
                 var c_sessionId = "Sesion_ID";
                 var c_name_value = "";
@@ -355,7 +371,7 @@
                     }
                     c_sessionID_value = unescape(document.cookie.substring(c_start, c_end));
                   }
-                  var url = result_url[0] + "teamengine/restMap/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
+                  var url = newURL + "restMap/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
                 }
                 var Client = {
                   "Result": wmsClient
@@ -562,8 +578,8 @@
                     }
                     c_sessionID_value = unescape(document.cookie.substring(c_start, c_end));
                   }
-                  urlpath = result_url[0] + "teamengine/restTest/suiteJson?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
-                  urlmap = result_url[0] + "teamengine/restMap/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
+                  urlpath = newURL + "restTest/suiteJson?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
+                  urlmap = newURL + "restMap/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
                   success = "../../../../images/pass.png";
                   error = "../../../../images/fail.png";
                   warning = "../../../../images/warning.png";
@@ -1088,7 +1104,7 @@
                 var result_url = url.split("teamengine");
                 var expend = "../../../../images/plus.png";
                 var merge = "../../../../images/minus.png";
-                var other = result_url[0] + "teamengine/images/abc.png";
+                var other = newURL + "images/abc.png";
                 if (path.indexOf('minus') > -1) {
                   $("#" + divid).attr("src", expend);
                 } else if (path.indexOf('plus') > -1) {
