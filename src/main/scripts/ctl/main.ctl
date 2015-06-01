@@ -41,7 +41,7 @@
        </ctl:message>
             
       <xsl:variable name="wms-url" 
-                          select="'http://cite.lat-lon.de/deegree-webservices-3.3.6-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'" />
+                          select="'http://cite.deegree.org/deegree-webservices-3.3.14-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'" />
       <xsl:variable name="capabilities">
         <ctl:request>
           <ctl:url>
