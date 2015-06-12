@@ -40,8 +40,16 @@
          2. Verify that a WMS interface satisfies all requirements for the operation GetFeatureInfo.
        </ctl:message>
             
-      <xsl:variable name="wms-url" 
-                          select="'http://cite.deegree.org/deegree-webservices-3.3.14-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'" />
+       <xsl:variable name="wms-url" >
+         <xsl:choose>
+     <xsl:when test="doc-available('http://cite.deegree.org/deegree-webservices-3.3.6-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities')">
+       <xsl:value-of select="'http://cite.deegree.org/deegree-webservices-3.3.6-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'"/>
+     </xsl:when>
+     <xsl:otherwise>
+             <xsl:value-of select="'http://cite.deegree.org/deegree-webservices-3.3.14-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'"/>
+     </xsl:otherwise>
+   </xsl:choose> 
+       </xsl:variable>
       <xsl:variable name="capabilities">
         <ctl:request>
           <ctl:url>
