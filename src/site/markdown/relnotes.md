@@ -1,5 +1,9 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
+### 1.0 (2015-06-18)
+  * test was approved by OGC to be moved to production
+  * [13](https://github.com/opengeospatial/ets-wms-client13/issues/13) - Update Reference Implementation link
+
 ### 0.8 (2015-03-26)
     
    * [11](https://github.com/opengeospatial/ets-wms-client13/issues/8) - 'teamengine' hardcoded in the code

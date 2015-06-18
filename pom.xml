@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ets-wms-client13</artifactId>
   <groupId>org.opengis.cite</groupId>
-  <version>0.9-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
 
 
   <name>Conformance Test Suite - OGC Web Map Service Client</name>
