@@ -19,7 +19,6 @@
       </suite>
       <revision>
         <name>${project.version}</name>
-        <status>Beta</status>
         <sources>
           <source>wms-client/${spec-version}/ctl</source>
         </sources>
