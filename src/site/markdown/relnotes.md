@@ -1,5 +1,8 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
+## 1.1 (2015-07-30)
+- Update pom.xml to build with Maven 2
+
 ### 1.0 (2015-06-18)
   * test was approved by OGC to be moved to production
   * [13](https://github.com/opengeospatial/ets-wms-client13/issues/13) - Update Reference Implementation link

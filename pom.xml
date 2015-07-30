@@ -99,7 +99,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.3</version>
+        <version>3.4</version>
         <executions>
           <execution>
             <id>site-package</id>
@@ -109,15 +109,15 @@
             </goals>
           </execution>
         </executions>
-        <!--
+       
         <dependencies>
           <dependency>
             <groupId>org.apache.maven.doxia</groupId>
             <artifactId>doxia-module-markdown</artifactId>
-            <version>1.5</version>
+            <version>1.6</version>
           </dependency>
         </dependencies>
-        -->
+        
         <configuration>
           <relativizeDecorationLinks>false</relativizeDecorationLinks>
           <generateReports>false</generateReports>
@@ -190,13 +190,7 @@
     </plugins>
   </reporting>
 
-  <distributionManagement>
-    <site>
-      <id>website</id>
-      <url>http://myhome</url>
-    </site>
-  </distributionManagement>
-
+ 
   <dependencies>
     <dependency>
       <groupId>org.opengis.cite.teamengine</groupId>
@@ -212,16 +206,6 @@
     </dependency>
   </dependencies>
 
-  <repositories>
-    <repository>
-      <!-- Allows public read-only access -->
-      <id>opengeospatial-cite</id>
-      <name>OGC CITE Repository</name>
-      <url>https://svn.opengeospatial.org/ogc-projects/cite/maven</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+  
 
 </project>
