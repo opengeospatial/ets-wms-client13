@@ -32,7 +32,6 @@
     <ets-code>wms-client</ets-code>
     <spec-version>1.3.0</spec-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <teamengine.version>4.0.5</teamengine.version>
   </properties>
 
   <build>
@@ -144,24 +143,7 @@
           <target>1.7</target>
         </configuration>
       </plugin>
-      <plugin>
-        <artifactId>maven-remote-resources-plugin</artifactId>
-        <version>1.5</version>
-        <configuration>
-          <resourceBundles>
-            <resourceBundle>org.opengis.cite.teamengine:teamengine-resources:${teamengine.version}</resourceBundle>
-          </resourceBundles>
-          <!-- attach resources to test build only -->
-          <attachToMain>false</attachToMain>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>process</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+   
     </plugins>
     <testResources>
       <testResource>
@@ -192,12 +174,6 @@
 
  
   <dependencies>
-    <dependency>
-      <groupId>org.opengis.cite.teamengine</groupId>
-      <artifactId>teamengine-core</artifactId>
-      <version>${teamengine.version}</version>
-      <scope>test</scope>
-    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
