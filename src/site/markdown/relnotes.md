@@ -1,6 +1,9 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
-## 1.1 (2015-07-30)
+### 1.2 (2015-MM-DD)
+- Move JAX-RS resources from `teamenegine-spi` module.
+
+### 1.1 (2015-07-30)
 - Update pom.xml to build with Maven 2
 
 ### 1.0 (2015-06-18)

@@ -5,8 +5,6 @@
   <artifactId>ets-wms-client13</artifactId>
   <groupId>org.opengis.cite</groupId>
   <version>1.2-SNAPSHOT</version>
-
-
   <name>Conformance Test Suite - OGC Web Map Service Client</name>
   <description>
   Verifies conformance of implementations to OGC Web Map Service Client.
@@ -70,23 +68,30 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
-        <executions>
-          <execution>
-            <id>default-jar</id>
-            <phase>disable</phase>
-          </execution>
-        </executions>
+        <version>2.6</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+            <manifestEntries>
+              <Build-Host>${hostname}</Build-Host>
+              <Build-Time>${maven.build.timestamp}</Build-Time>
+              <Build-Revision>${buildNumber}</Build-Revision>
+            </manifestEntries>
+          </archive>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.5.3</version>
+        <version>2.6</version>
         <configuration>
           <descriptors>
-            <descriptor>src/assembly/ctl.xml</descriptor>
+            <descriptor>${basedir}/src/assembly/ctl.xml</descriptor>
+            <descriptor>${basedir}/src/assembly/deps.xml</descriptor>
           </descriptors>
         </configuration>
-         <executions>
+        <executions>
           <execution>
             <phase>package</phase>
             <goals>
@@ -108,7 +113,6 @@
             </goals>
           </execution>
         </executions>
-       
         <dependencies>
           <dependency>
             <groupId>org.apache.maven.doxia</groupId>
@@ -116,7 +120,6 @@
             <version>1.6</version>
           </dependency>
         </dependencies>
-        
         <configuration>
           <relativizeDecorationLinks>false</relativizeDecorationLinks>
           <generateReports>false</generateReports>
@@ -125,7 +128,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.17</version>
+        <version>2.19</version>
         <configuration>
           <includes>
             <include>**/Verify*.java</include>
@@ -143,7 +146,24 @@
           <target>1.7</target>
         </configuration>
       </plugin>
-   
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>buildnumber-maven-plugin</artifactId>
+        <version>1.4</version>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals>
+              <goal>create</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <doCheck>false</doCheck>
+          <doUpdate>false</doUpdate>
+          <shortRevisionLength>10</shortRevisionLength>
+        </configuration>
+      </plugin>
     </plugins>
     <testResources>
       <testResource>
@@ -172,16 +192,49 @@
     </plugins>
   </reporting>
 
- 
   <dependencies>
+    <dependency>
+      <groupId>org.opengis.cite.teamengine</groupId>
+      <artifactId>teamengine-spi</artifactId>
+      <version>4.5-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.opengis.cite.teamengine</groupId>
+      <artifactId>teamengine-core</artifactId>
+      <version>4.5-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20080701</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.2.2</version>
+      <type>jar</type>
+    </dependency>
+    <!--
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.16</version>
+      <scope>runtime</scope>
+    </dependency>
+    -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>
-
-  
+  </dependencies>  
 
 </project>
