@@ -379,7 +379,7 @@
                     }
                     c_sessionID_value = unescape(document.cookie.substring(c_start, c_end));
                   }
-                  var url = newURL + "restMap/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
+                  var url = newURL + "rest/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
                 }
                 var Client = {
                   "Result": wmsClient
@@ -586,8 +586,8 @@
                     }
                     c_sessionID_value = unescape(document.cookie.substring(c_start, c_end));
                   }
-                  urlpath = newURL + "restTest/suiteJson?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
-                  urlmap = newURL + "restMap/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
+                  urlpath = newURL + "rest/suiteJson?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
+                  urlmap = newURL + "rest/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
                   success = "../../../../images/pass.png";
                   error = "../../../../images/fail.png";
                   warning = "../../../../images/warning.png";
