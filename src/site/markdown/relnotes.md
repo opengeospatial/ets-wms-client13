@@ -1,6 +1,6 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
-### 1.2 (2016-MM-DD)
+### 1.2 (2016-01-29)
 - Move JAX-RS resources from `teamenegine-spi` module.
 - Try to access all known WMS 1.3 [reference implementations](https://github.com/opengeospatial/cite/wiki/Reference-Implementations).
 
