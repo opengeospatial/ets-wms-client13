@@ -40,16 +40,19 @@
          2. Verify that a WMS interface satisfies all requirements for the operation GetFeatureInfo.
        </ctl:message>
             
-       <xsl:variable name="wms-url" >
-         <xsl:choose>
-     <xsl:when test="doc-available('http://cite.deegree.org/deegree-webservices-3.3.6-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities')">
-       <xsl:value-of select="'http://cite.deegree.org/deegree-webservices-3.3.6-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'"/>
-     </xsl:when>
-     <xsl:otherwise>
-             <xsl:value-of select="'http://cite.deegree.org/deegree-webservices-3.3.14-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'"/>
-     </xsl:otherwise>
-   </xsl:choose> 
-       </xsl:variable>
+    <xsl:variable name="wms-url" >
+     <xsl:choose>
+       <xsl:when test="doc-available('http://cite.deegree.org/deegree-webservices-3.3.14-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities')">
+         <xsl:value-of select="'http://cite.deegree.org/deegree-webservices-3.3.14-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'"/>
+       </xsl:when>
+       <xsl:when test="doc-available('http://cite.demo.opengeo.org:8080/geoserver_wms13/wms?service=WMS&amp;request=GetCapabilities&amp;version=1.3.0')">
+         <xsl:value-of select="'http://cite.demo.opengeo.org:8080/geoserver_wms13/wms?service=WMS&amp;request=GetCapabilities&amp;version=1.3.0'"/>
+       </xsl:when>
+       <xsl:otherwise>
+         <xsl:value-of select="'http://services.interactive-instruments.de/cite-xs-46/cite/cgi-bin/wms/wms/wms?request=GetCapabilities&amp;version=1.3'"/>
+       </xsl:otherwise>
+     </xsl:choose>
+   </xsl:variable>
       <xsl:variable name="capabilities">
         <ctl:request>
           <ctl:url>
