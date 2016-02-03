@@ -1,8 +1,9 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
 ### 1.2 (2016-01-29)
-- Move JAX-RS resources from `teamenegine-spi` module.
-- Try to access all known WMS 1.3 [reference implementations](https://github.com/opengeospatial/cite/wiki/Reference-Implementations).
+  - [#20](https://github.com/opengeospatial/ets-wms-client13/issues/20) - Modify REST endpoints for default web config
+  - [#19](https://github.com/opengeospatial/ets-wms-client13/issues/19) - Update reference implementation links
+  - [#18](https://github.com/opengeospatial/ets-wms-client13/issues/18) - Move JAX-RS resources from `teamenegine-spi` module
 
 ### 1.1 (2015-07-30)
 - Update pom.xml to build with Maven 2
