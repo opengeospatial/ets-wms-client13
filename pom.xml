@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ets-wms-client13</artifactId>
   <groupId>org.opengis.cite</groupId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <name>Conformance Test Suite - OGC Web Map Service Client</name>
   <description>
   Verifies conformance of implementations to OGC Web Map Service Client.
@@ -204,12 +204,12 @@
     <dependency>
       <groupId>org.opengis.cite.teamengine</groupId>
       <artifactId>teamengine-spi</artifactId>
-      <version>4.5-SNAPSHOT</version>
+      <version>4.5</version>
     </dependency>
     <dependency>
       <groupId>org.opengis.cite.teamengine</groupId>
       <artifactId>teamengine-core</artifactId>
-      <version>4.5-SNAPSHOT</version>
+      <version>4.5</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>
