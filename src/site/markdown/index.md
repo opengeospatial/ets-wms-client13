@@ -205,6 +205,14 @@ Total number of tests in this group: 10
 ###  Test Name: gfi:j
 **Test Assertion:** The value of the J parameter is an integer between 0 and the maximum value of the i axis (HEIGHT-1). 
 
+## TEAM Engine Compatibility
+
+| Test Revision | TEAM Engine Version |
+|--------------|---------------------|
+| 1.0          | 4.1, 4.2, 4.3 , 4.4 |
+| 1.1          | 4.1, 4.2, 4.3 , 4.4 |
+| 1.2          | 4.5                 |
+
 
 ##  License
 
