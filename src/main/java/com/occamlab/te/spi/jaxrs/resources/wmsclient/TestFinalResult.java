@@ -39,11 +39,11 @@ public class TestFinalResult {
           @QueryParam("sessionID") String sessionID) throws FileNotFoundException, IOException {
 
     File basePath=SetupOptions.getBaseConfigDirectory();
-    String pathAddress = basePath + "/users/" + userId + "/" + sessionID + "/test_data";
+    String pathAddress = basePath + File.separator + "users" + File.separator + userId + File.separator + sessionID + File.separator + "test_data";
 
     //Get the Final result from file which save after stop button click.
     //Used bufferedReader to get the data from file.
-    InputStream inputStreamFilePath = new FileInputStream(new File(pathAddress + "/finalResult.txt"));
+    InputStream inputStreamFilePath = new FileInputStream(new File(pathAddress + File.separator + "finalResult.txt"));
     BufferedReader fileReader = new BufferedReader(new InputStreamReader(inputStreamFilePath));
     String lineReader;
     String finalResult = "";

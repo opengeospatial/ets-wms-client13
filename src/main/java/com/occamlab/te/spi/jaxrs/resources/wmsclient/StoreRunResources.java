@@ -63,7 +63,7 @@ public class StoreRunResources {
     JSONArray jsonArrTestDetail = new JSONArray();
     // Get TE_Base Directory path.
     File basePath=SetupOptions.getBaseConfigDirectory();
-    String pathAddress = basePath + "/users/" + userId + "/" + sessionID + "/test_data";
+    String pathAddress = basePath + File.separator + "users" + File.separator + userId + File.separator + sessionID + File.separator + "test_data";
     int testCount = 1;
     int runTestId = 1;
     Stack runTestStack = new Stack();
@@ -71,7 +71,7 @@ public class StoreRunResources {
     Stack outputTestStack = new Stack();
     // Read the test result from file.
     try {
-      InputStream inputStreamDirectory = new FileInputStream(new File(pathAddress + "/test_result.txt"));
+      InputStream inputStreamDirectory = new FileInputStream(new File(pathAddress + File.separator + "test_result.txt"));
       BufferedReader dataReader = new BufferedReader(new InputStreamReader(inputStreamDirectory));
       String lineReader;
       // Used Buffered Reader to read file line by line.
