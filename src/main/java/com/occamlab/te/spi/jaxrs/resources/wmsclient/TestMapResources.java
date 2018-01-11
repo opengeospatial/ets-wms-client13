@@ -106,8 +106,8 @@ public class TestMapResources {
           @QueryParam("sessionID") String sessionID, String data) throws ParserConfigurationException, TransformerException, TransformerConfigurationException, FileNotFoundException, IOException {
     File basePath=SetupOptions.getBaseConfigDirectory();
 // Save data into file which comes through Rest end point.
-    String pathAddress = basePath + "/users/" + userId + "/" + sessionID + "/test_data";
-    File fulePath = new File(pathAddress, "/finalResult.txt");
+    String pathAddress = basePath + File.separator + "users" + File.separator + userId + File.separator + sessionID + File.separator + "test_data";
+    File fulePath = new File(pathAddress, File.separator + "finalResult.txt");
     OutputStreamWriter writerBefore = new OutputStreamWriter(
             new FileOutputStream(fulePath, true), "UTF-8");
     try (BufferedWriter fbwBefore = new BufferedWriter(writerBefore)) {
