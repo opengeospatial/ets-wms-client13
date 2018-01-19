@@ -342,8 +342,6 @@
               }
               newURL=newURL+"/";
               var j = 0;
-              var k = 0;
-              var wmsMapCount = 0;
               var wmsClient = [];
 
               function test() {
@@ -684,15 +682,7 @@
                               success: function(data1) {
                                 var jsonData = JSON.parse(data1);
                                 var text = "";
-                                wmsMapCount++;
-                                if (wmsMapCount == 2) {
-                                  j = 0;
-                                }
-                                else {
-                                  if (j &lt; jsonData.TEST.length) {
-                                    k = j;
-                                  }
-                                }
+                                j = 0;
                                 if (jsonData.TEST[j] !== undefined) {
                                   if (jsonData.TEST[j].Name === "cite:Autos") {
                                     $('#Autos_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
