@@ -327,7 +327,7 @@
               </div>
               <div id="show"/>
             </fieldset>                        
-            <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+            <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
             <script>
               var url = location.href;
               var count = 0;
@@ -387,10 +387,11 @@
                 };
                 $.ajax({
                   url: url,
-                  type: "POST",
+                  type: 'POST',
                   data: JSON.stringify(Client),
                   processData: false,
-                  contentType: "text/plain",
+                  async: false,
+                  contentType: 'text/plain',
                   success: function() {},
                   error: function() {}
                 });
