@@ -172,6 +172,23 @@
           <shortRevisionLength>10</shortRevisionLength>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+        <configuration>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <tagNameFormat>@{project.version}</tagNameFormat>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-scm-publish-plugin</artifactId>
+        <version>1.1</version>
+        <configuration>
+          <scmBranch>gh-pages</scmBranch>
+        </configuration>
+      </plugin>
     </plugins>
     <testResources>
       <testResource>
@@ -243,6 +260,12 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-  </dependencies>  
+  </dependencies>
 
+  <distributionManagement>
+    <site>
+      <id>site</id>
+      <url>scm:git:git@github.com:opengeospatial/ets-wms-client13.git</url>
+    </site>
+  </distributionManagement>
 </project>
