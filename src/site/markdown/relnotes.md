@@ -1,5 +1,10 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
+### 1.3 (2018-01-26)
+  - [#27](https://github.com/opengeospatial/ets-wms-client13/issues/27) - Result view (tree) is missing
+  - [#24](https://github.com/opengeospatial/ets-wms-client13/issues/24) - The WMS client test fails to capture all GetMap requests
+  - [#28](https://github.com/opengeospatial/ets-wms-client13/issues/28) - FileNotFoundException in wms-client test
+
 ### 1.2 (2016-01-29)
   - [#20](https://github.com/opengeospatial/ets-wms-client13/issues/20) - Modify REST endpoints for default web config
   - [#19](https://github.com/opengeospatial/ets-wms-client13/issues/19) - Update reference implementation links
