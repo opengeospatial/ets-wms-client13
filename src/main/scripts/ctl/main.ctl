@@ -299,14 +299,6 @@
                             
                   <div id="Streams_result" style="margin-left:80px;">
                   </div>
-                            
-                  <div id="Terrain" style="margin-left:60px;">
-                    <img src="../../../../images/warning.png" id="Terrain_img" align="middle" alt="Begin" ></img>
-                    <b>cite:Terrain</b>
-                  </div>
-
-                  <div id="Terrain_result" style="margin-left:80px;">
-                  </div>
                                 
                 </div>
                 </div>
@@ -538,15 +530,6 @@
                 "image": "../../../../images/warning.png",
                 "node_id": "16__result",
                 "node_name":"cite:Streams"
-              };
-              wmsClient.push(data);
-              var data = {
-                "id": 17,
-                "Name": "cite:Terrain",
-                "ParentID": 3,
-                "image": "../../../../images/warning.png",
-                "node_id": "17__result",
-                "node_name":"cite:Terrain"
               };
               wmsClient.push(data);
               var data = {
@@ -996,31 +979,7 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Terrain") {
-                                    $('#Terrain_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
-                                      <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
-                                    if ($('#Terrain_img').attr("src").indexOf('warning') > -1) {
-                                      $('#Terrain_img').attr("src", success);
-                                    }
-                                    if ($('#WMS-Client-result').attr("src").indexOf('warning') > -1) {
-                                      $('#WMS-Client-result').attr("src", success);
-                                    }
-                                    var data = {
-                                      "id": id,
-                                      "Name": "Request " + method + " (" + time + ") ....." + counter.Result,
-                                      "ParentID": 17,
-                                      "image": success,
-                                      "indent":4
-                                    };
-                                    wmsClient.push(data);
-                                    wmsClient[16].image = success;
-                                    wmsClient[0].image = success;
-                                    id++;
-                                    j++;
-                                  }
-                                }
-                                if (($('#Autos_result').text() == '') || ($('#BasicPolygons_result').text() == '') || ($('#Bridges_result').text() == '') || ($('#BuildingCenters_result').text() == '') || ($('#Buildings_result').text() == '') || ($('#DividedRoutes_result').text() == '') || ($('#Forests_result').text() == '') || ($('#Lakes_result').text() == '') || ($('#MapNeatline_result').text() == '') || ($('#NamedPlaces_result').text() == '') || ($('#Ponds_result').text() == '') || ($('#RoadSegments_result').text() == '') || ($('#Streams_result').text() == '') || ($('#Terrain_result').text() == '')) {
+                                if (($('#Autos_result').text() == '') || ($('#BasicPolygons_result').text() == '') || ($('#Bridges_result').text() == '') || ($('#BuildingCenters_result').text() == '') || ($('#Buildings_result').text() == '') || ($('#DividedRoutes_result').text() == '') || ($('#Forests_result').text() == '') || ($('#Lakes_result').text() == '') || ($('#MapNeatline_result').text() == '') || ($('#NamedPlaces_result').text() == '') || ($('#Ponds_result').text() == '') || ($('#RoadSegments_result').text() == '') || ($('#Streams_result').text() == '')) {
                                   if ($('#WMS-Client-result').attr("src").indexOf('fail') == -1) {
                                    $('#WMS-Client-result').attr("src", "../../../../images/fail_map.png");
                                   }
