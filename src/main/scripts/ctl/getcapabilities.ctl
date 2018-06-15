@@ -10,7 +10,7 @@
  xmlns:basic="urn:wms_client_test_suite/basic_elements"
  xmlns:gc="urn:wms_client_test_suite/GetCapabilities">
 
-  <ctl:test name="gc:check-GetCapabilities-request">
+  <ctl:test name="gc:check-GetCapabilities-request" isConformanceClass="true" isBasic="true">
     <ctl:param name="request"/>
     <ctl:param name="response"/>
     <ctl:param name="capabilities"/>

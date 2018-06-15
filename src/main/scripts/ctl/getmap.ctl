@@ -12,7 +12,7 @@
     xmlns:basic="urn:wms_client_test_suite/basic_elements"
     xmlns:gm="urn:wms_client_test_suite/GetMap">
 
-    <ctl:test name="gm:check-GetMap-request">
+    <ctl:test name="gm:check-GetMap-request" isConformanceClass="true" isBasic="true">
         <ctl:param name="request"/>
         <ctl:param name="response"/>
         <ctl:param name="capabilities"/>
