@@ -665,10 +665,18 @@
                               url: urlmap,
                               success: function(data1) {
                                 var jsonData = JSON.parse(data1);
+                                if(jsonData != null){
+                                console.log("------ Requested Layers ------");
+                                console.log(JSON.stringify(jsonData));
+                                console.log("------ End Layers ------");
+                                }
                                 var text = "";
                                 j = 0;
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Autos") {
+                                
+                              for ( var k = 0; k &lt; Object.keys(jsonData).length; k++){  
+                                var testName = jsonData.TEST[k].Name;
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:Autos") {
                                     $('#Autos_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Autos_img').attr("src").indexOf('warning') > -1) {
@@ -691,8 +699,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:BasicPolygons") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:BasicPolygons") {
                                     $('#BasicPolygons_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#BasicPolygons_img').attr("src").indexOf('warning') > -1) {
@@ -715,8 +723,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Bridges") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:Bridges") {
                                     $('#Bridges_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Bridges_img').attr("src").indexOf('warning') > -1) {
@@ -739,8 +747,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:BuildingCenters") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:BuildingCenters") {
                                     $('#BuildingCenters_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#BuildingCenters_img').attr("src").indexOf('warning') > -1) {
@@ -763,8 +771,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Buildings") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:Buildings") {
                                     $('#Buildings_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Buildings_img').attr("src").indexOf('warning') > -1) {
@@ -787,8 +795,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:DividedRoutes") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:DividedRoutes") {
                                     $('#DividedRoutes_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#DividedRoutes_img').attr("src").indexOf('warning') > -1) {
@@ -811,8 +819,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Forests") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:Forests") {
                                     $('#Forests_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Forests_img').attr("src").indexOf('warning') > -1) {
@@ -835,8 +843,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Lakes") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:Lakes") {
                                     $('#Lakes_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Lakes_img').attr("src").indexOf('warning') > -1) {
@@ -859,8 +867,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:MapNeatline") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:MapNeatline") {
                                     $('#MapNeatline_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#MapNeatline_img').attr("src").indexOf('warning') > -1) {
@@ -883,8 +891,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:NamedPlaces") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:NamedPlaces") {
                                     $('#NamedPlaces_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#NamedPlaces_img').attr("src").indexOf('warning') > -1) {
@@ -907,8 +915,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Ponds") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:Ponds") {
                                     $('#Ponds_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Ponds_img').attr("src").indexOf('warning') > -1) {
@@ -931,8 +939,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:RoadSegments") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:RoadSegments") {
                                     $('#RoadSegments_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#RoadSegments_img').attr("src").indexOf('warning') > -1) {
@@ -955,8 +963,8 @@
                                     j++;
                                   }
                                 }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Streams") {
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:Streams") {
                                     $('#Streams_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Streams_img').attr("src").indexOf('warning') > -1) {
@@ -997,6 +1005,7 @@
                                   }
                                 }
                                 method++;
+                                }
                               },
                               error: function(jqXHR, textStatus, errorThrown) {
                                 $('#show').text("");
