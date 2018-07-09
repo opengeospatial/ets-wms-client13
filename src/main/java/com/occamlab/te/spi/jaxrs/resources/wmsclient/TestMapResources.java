@@ -1,13 +1,17 @@
 package com.occamlab.te.spi.jaxrs.resources.wmsclient;
 
 import com.occamlab.te.SetupOptions;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.nio.file.Files;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Stack;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -20,6 +24,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
+
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,7 +59,7 @@ public class TestMapResources {
   @GET
   public String handleGet(
           @QueryParam("userID") String userId,
-          @QueryParam("sessionID") String sessionID) throws IOException, JSONException, ParserConfigurationException, SAXException {
+          @QueryParam("sessionID") String sessionID, @QueryParam("modifiedTime") String modifiedTime) throws IOException, JSONException, ParserConfigurationException, SAXException {
 
     File basePath=SetupOptions.getBaseConfigDirectory();
     String pathAddress = basePath + "/users/" + userId + "/" + sessionID + "/test_data";
@@ -61,7 +68,12 @@ public class TestMapResources {
     DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 //Get-Map_layer.xml file contain all layer names which are run by Get-Map method.
     Document mapLayerDocument = docBuilder.parse(new File(pathAddress + "/Get-Map-Layer.xml"));
-
+    
+    BasicFileAttributes attr = Files.readAttributes(new File(pathAddress + "/Get-Map-Layer.xml").toPath(), BasicFileAttributes.class);
+    DateTime lastModifiedTime = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.000Z").parseDateTime(attr.lastModifiedTime().toString());
+    DateTime previousModifiedTime = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.000Z").parseDateTime(modifiedTime);
+    JSONObject jsonObj = new JSONObject();
+    if(lastModifiedTime.isAfter(previousModifiedTime)){
 //Get Node list from xml file.
     NodeList listOfPersons = mapLayerDocument.getElementsByTagName("value");
 
@@ -74,7 +86,6 @@ public class TestMapResources {
     }
 
 //Put all layer name into jsonArray.
-    JSONObject jsonObj = new JSONObject();
     JSONArray jsonArr = new JSONArray();
     while (!mapLayerTestDetail.isEmpty()) {
       JSONObject mapLayerTestObject = new JSONObject();
@@ -83,6 +94,11 @@ public class TestMapResources {
       jsonArr.put(mapLayerTestObject);
     }
     jsonObj.put("TEST", jsonArr);
+    jsonObj.put("modifiedTime", lastModifiedTime);
+    } else {
+    	jsonObj.put("Test", "");
+    	jsonObj.put("modifiedTime", lastModifiedTime);
+    }
     return jsonObj.toString();
   }
 
