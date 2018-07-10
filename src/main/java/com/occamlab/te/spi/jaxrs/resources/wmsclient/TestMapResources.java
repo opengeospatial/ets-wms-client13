@@ -27,6 +27,8 @@ import javax.xml.transform.TransformerException;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -70,10 +72,13 @@ public class TestMapResources {
     Document mapLayerDocument = docBuilder.parse(new File(pathAddress + "/Get-Map-Layer.xml"));
     
     BasicFileAttributes attr = Files.readAttributes(new File(pathAddress + "/Get-Map-Layer.xml").toPath(), BasicFileAttributes.class);
-    DateTime lastModifiedTime = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.000Z").parseDateTime(attr.lastModifiedTime().toString());
-    DateTime previousModifiedTime = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.000Z").parseDateTime(modifiedTime);
+    DateTime lastModifiedTime = ISODateTimeFormat.dateTime().parseDateTime(attr.lastModifiedTime().toString());
+    if (modifiedTime == null || modifiedTime.equals("undefined")){
+    	modifiedTime = lastModifiedTime.toString();
+    }
+    DateTime previousModifiedTime = ISODateTimeFormat.dateTime().parseDateTime(modifiedTime);
     JSONObject jsonObj = new JSONObject();
-    if(lastModifiedTime.isAfter(previousModifiedTime)){
+    if(lastModifiedTime.getMillis() >= previousModifiedTime.getMillis()){
 //Get Node list from xml file.
     NodeList listOfPersons = mapLayerDocument.getElementsByTagName("value");
 
@@ -93,10 +98,9 @@ public class TestMapResources {
       mapLayerTestDetail.pop();
       jsonArr.put(mapLayerTestObject);
     }
+    jsonArr.put(new JSONObject().put("modifiedTime", lastModifiedTime));
     jsonObj.put("TEST", jsonArr);
-    jsonObj.put("modifiedTime", lastModifiedTime);
     } else {
-    	jsonObj.put("Test", "");
     	jsonObj.put("modifiedTime", lastModifiedTime);
     }
     return jsonObj.toString();

@@ -323,6 +323,7 @@
             <script>
               var url = location.href;
               var count = 0;
+              var modifiedTime;
               var method = 1;
               var result_url = url.split("/");
               var newURL="";
@@ -572,7 +573,7 @@
                     c_sessionID_value = unescape(document.cookie.substring(c_start, c_end));
                   }
                   urlpath = newURL + "rest/suiteJson?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
-                  urlmap = newURL + "rest/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
+                  urlmap = newURL + "rest/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value + "&amp;modifiedTime=" + modifiedTime;
                   success = "../../../../images/pass.png";
                   error = "../../../../images/fail.png";
                   warning = "../../../../images/warning.png";
@@ -665,11 +666,7 @@
                               url: urlmap,
                               success: function(data1) {
                                 var jsonData = JSON.parse(data1);
-                                if(jsonData != null){
-                                console.log("------ Requested Layers ------");
-                                console.log(JSON.stringify(jsonData));
-                                console.log("------ End Layers ------");
-                                }
+                                modifiedTime = jsonData.modifiedTime;
                                 var text = "";
                                 j = 0;
                                 
