@@ -78,6 +78,7 @@ public class TestMapResources {
     }
     DateTime previousModifiedTime = ISODateTimeFormat.dateTime().parseDateTime(modifiedTime);
     JSONObject jsonObj = new JSONObject();
+    
     if(lastModifiedTime.getMillis() >= previousModifiedTime.getMillis()){
 //Get Node list from xml file.
     NodeList listOfPersons = mapLayerDocument.getElementsByTagName("value");
@@ -98,11 +99,13 @@ public class TestMapResources {
       mapLayerTestDetail.pop();
       jsonArr.put(mapLayerTestObject);
     }
-    jsonArr.put(new JSONObject().put("modifiedTime", lastModifiedTime));
     jsonObj.put("TEST", jsonArr);
+    jsonObj.put("modifiedTime", lastModifiedTime);
     } else {
+    	jsonObj.put("Test", "");
     	jsonObj.put("modifiedTime", lastModifiedTime);
     }
+    System.out.println("JsonData: " + jsonObj.toString());
     return jsonObj.toString();
   }
 

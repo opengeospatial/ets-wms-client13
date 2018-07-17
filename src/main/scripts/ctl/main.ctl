@@ -573,7 +573,7 @@
                     c_sessionID_value = unescape(document.cookie.substring(c_start, c_end));
                   }
                   urlpath = newURL + "rest/suiteJson?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
-                  urlmap = newURL + "rest/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value + "&amp;modifiedTime=" + modifiedTime;
+                  urlmap = newURL + "rest/suiteMap?userID=" + c_name_value + "&amp;sessionID=" + c_sessionID_value;
                   success = "../../../../images/pass.png";
                   error = "../../../../images/fail.png";
                   warning = "../../../../images/warning.png";
@@ -660,17 +660,19 @@
                           }
                         }
                         else if (jsonData.TEST[count].Name === "gm:check-GetMap-request") {
+                        	var urlmap2 = "";
                           if (counter.Indent == "1") {
+                          		urlmap2 = urlmap + "&amp;modifiedTime=" + encodeURIComponent(modifiedTime);
                             $.ajax({
                               type: "GET",
-                              url: urlmap,
+                              url: urlmap2,
                               success: function(data1) {
                                 var jsonData = JSON.parse(data1);
                                 modifiedTime = jsonData.modifiedTime;
                                 var text = "";
                                 j = 0;
                                 
-                              for ( var k = 0; k &lt; Object.keys(jsonData).length; k++){  
+                              for ( var k = 0; k &lt; Object.keys(jsonData.TEST).length; k++){  
                                 var testName = jsonData.TEST[k].Name;
                                 if (jsonData.TEST[k] !== undefined) {
                                   if (testName === "cite:Autos") {
