@@ -27,6 +27,8 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
+import org.apache.commons.io.FilenameUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,6 +66,7 @@ public class StoreRunResources {
     // Get TE_Base Directory path.
     File basePath=SetupOptions.getBaseConfigDirectory();
     String pathAddress = basePath + File.separator + "users" + File.separator + userId + File.separator + sessionID + File.separator + "test_data";
+    pathAddress = FilenameUtils.normalize(pathAddress);
     int testCount = 1;
     int runTestId = 1;
     Stack runTestStack = new Stack();
@@ -178,7 +181,7 @@ public class StoreRunResources {
                   } else {
                     fileName = test.getString("File").split(".xml")[0] + "Fail.xml";
                   }
-                  fileCreate(new File(pathAddress, fileName), inputSource);
+                  fileCreate(new File(FilenameUtils.normalize(pathAddress), FilenameUtils.normalize(fileName)), inputSource);
                 }
               }
             }
