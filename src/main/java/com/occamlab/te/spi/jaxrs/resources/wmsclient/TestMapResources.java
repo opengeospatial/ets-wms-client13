@@ -100,7 +100,7 @@ public class TestMapResources {
         ((Element) valueElement).setAttribute("isProcessed", "true");
       }
     }
-    DomUtils.transformDocument(mapLayerDocument, new File(xmlFile));
+    WmsClientDomUtils.transformDocument(mapLayerDocument, new File(xmlFile));
 
     // Put all layer name into jsonArray.
     JSONArray jsonArr = new JSONArray();

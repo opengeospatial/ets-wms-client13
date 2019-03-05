@@ -11,7 +11,8 @@
     xmlns:main="urn:wms_client_test_suite/main"
     xmlns:basic="urn:wms_client_test_suite/basic_elements"
     xmlns:gm="urn:wms_client_test_suite/GetMap"
-    xmlns:tec="java:com.occamlab.te.TECore" 
+    xmlns:tec="java:com.occamlab.te.TECore"
+    xmlns:ctlu="java:com.occamlab.te.spi.jaxrs.resources.wmsclient.CtlUtils"
     xmlns:te="http://www.occamlab.com/te">
 
     <ctl:test name="gm:check-GetMap-request">
@@ -166,16 +167,13 @@
                     <ctl:with-param name="list" select="$request/ctl:param[fn:upper-case(@name)='LAYERS']"/>
                 </ctl:call-function>
             </xsl:variable>
-             <xsl:variable name="te:layers">
+             <xsl:variable name="layers">
 	             <Layers>
 	                  <xsl:copy-of select="$layer-values" />
 	             </Layers>
              </xsl:variable>
-             
-            <!-- Get the run Get Map Layer Name -->
-            <!-- This method is used to store the requested layer by tools e.g. Udig and QGIS and
-            	 the impelementation of tec:storeRequestedLayers method can be found in TECore class of teamengine. -->
-            <xsl:variable name="updateLayer" select="tec:storeRequestedLayers($te:core, $te:layers)" />
+            <xsl:variable name="sessionDir" select="substring-after(ctl:getSessionDir(),'file:')"/>
+            <xsl:value-of select="ctlu:storeRequestedLayers($sessionDir, $layers)" />
             <xsl:for-each select="$layer-values/value">
                 <xsl:variable name="value" select="string(.)"/>
                 <xsl:if test="not($root-layer/descendant-or-self::wms:Layer[wms:Name=$value])">
