@@ -1,6 +1,8 @@
 package com.occamlab.te.spi.jaxrs.resources.wmsclient;
 
 import com.occamlab.te.SetupOptions;
+import com.occamlab.te.util.DomUtils;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,6 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Stack;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -20,10 +23,17 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -52,29 +62,47 @@ public class TestMapResources {
   @GET
   public String handleGet(
           @QueryParam("userID") String userId,
-          @QueryParam("sessionID") String sessionID) throws IOException, JSONException, ParserConfigurationException, SAXException {
+          @QueryParam("sessionID") String sessionID, @QueryParam("modifiedTime") String modifiedTime) throws IOException, JSONException, ParserConfigurationException, SAXException {
 
-    File basePath=SetupOptions.getBaseConfigDirectory();
-    String pathAddress = basePath + "/users/" + userId + "/" + sessionID + "/test_data";
+    File basePath = SetupOptions.getBaseConfigDirectory();
+    String xmlFile = basePath + "/users/" + userId + "/" + sessionID
+        + "/test_data/Get-Map-Layer-New.xml";
 
-    DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+    DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory
+        .newInstance();
     DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-//Get-Map_layer.xml file contain all layer names which are run by Get-Map method.
-    Document mapLayerDocument = docBuilder.parse(new File(pathAddress + "/Get-Map-Layer.xml"));
+    // Get-Map_layer.xml file contain all layer names which are run by Get-Map
+    // method.
+    Document mapLayerDocument = docBuilder.parse(new File(xmlFile));
 
-//Get Node list from xml file.
-    NodeList listOfPersons = mapLayerDocument.getElementsByTagName("value");
+    JSONObject jsonObj = new JSONObject();
 
-//Get the name of each layer from nodelist and inserting into stack. 
-    Stack mapLayerTestDetail = new Stack();
-    if (null != listOfPersons && listOfPersons.getLength() > 0) {
-      for (int index = 0; index < listOfPersons.getLength(); index++) {
-        mapLayerTestDetail.push((listOfPersons.item(index).getFirstChild().toString().split(" ")[1]).split("]")[0]);
-      }
+    // Get Node list from xml file.
+    NodeList listOfLayerValues = null;
+    try {
+      XPath xPath = XPathFactory.newInstance().newXPath();
+      String expression = "/Layers//value[not(@isProcessed)]";
+      listOfLayerValues = (NodeList) xPath.compile(expression).evaluate(
+          mapLayerDocument, XPathConstants.NODESET);
+    } catch (XPathExpressionException e) {
+      e.printStackTrace();
     }
 
-//Put all layer name into jsonArray.
-    JSONObject jsonObj = new JSONObject();
+    // Get the name of each layer from nodelist and inserting into stack.
+    // Update the each processed layer with the 'isProcessed' attribute so,
+    // we can understand the layer is processed or not. 
+    Stack mapLayerTestDetail = new Stack();
+    if (null != listOfLayerValues && listOfLayerValues.getLength() > 0) {
+      for (int index = 0; index < listOfLayerValues.getLength(); index++) {
+        Node valueElement = listOfLayerValues.item(index);
+        mapLayerTestDetail.push((valueElement.getFirstChild().toString()
+            .split(" ")[1]).split("]")[0]);
+        ((Element) valueElement).setAttribute("isProcessed", "true");
+      }
+    }
+    WmsClientDomUtils.transformDocument(mapLayerDocument, new File(xmlFile));
+
+    // Put all layer name into jsonArray.
     JSONArray jsonArr = new JSONArray();
     while (!mapLayerTestDetail.isEmpty()) {
       JSONObject mapLayerTestObject = new JSONObject();

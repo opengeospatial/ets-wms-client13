@@ -220,12 +220,12 @@
     <dependency>
       <groupId>org.opengis.cite.teamengine</groupId>
       <artifactId>teamengine-spi</artifactId>
-      <version>4.5</version>
+      <version>5.3</version>
     </dependency>
     <dependency>
       <groupId>org.opengis.cite.teamengine</groupId>
       <artifactId>teamengine-core</artifactId>
-      <version>4.5</version>
+      <version>5.3</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>

@@ -320,9 +320,10 @@
               <div id="show"/>
             </fieldset>                        
             <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-            <script>
+              <script>
               var url = location.href;
               var count = 0;
+              var modifiedTime;
               var method = 1;
               var result_url = url.split("/");
               var newURL="";
@@ -659,16 +660,22 @@
                           }
                         }
                         else if (jsonData.TEST[count].Name === "gm:check-GetMap-request") {
+                        	var urlmap2 = "";
                           if (counter.Indent == "1") {
+                          		urlmap2 = urlmap + "&amp;modifiedTime=" + encodeURIComponent(modifiedTime);
                             $.ajax({
                               type: "GET",
-                              url: urlmap,
+                              url: urlmap2,
                               success: function(data1) {
                                 var jsonData = JSON.parse(data1);
+                                modifiedTime = jsonData.modifiedTime;
                                 var text = "";
                                 j = 0;
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Autos") {
+                                
+                              for ( var k = 0; k &lt; Object.keys(jsonData.TEST).length; k++){  
+                                var testName = jsonData.TEST[k].Name;
+                                if (jsonData.TEST[k] !== undefined) {
+                                  if (testName === "cite:Autos") {
                                     $('#Autos_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Autos_img').attr("src").indexOf('warning') > -1) {
@@ -689,10 +696,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:BasicPolygons") {
+                                  } else if (testName === "cite:BasicPolygons") {
                                     $('#BasicPolygons_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#BasicPolygons_img').attr("src").indexOf('warning') > -1) {
@@ -713,10 +717,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Bridges") {
+                                  } else if (testName === "cite:Bridges") {
                                     $('#Bridges_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Bridges_img').attr("src").indexOf('warning') > -1) {
@@ -737,10 +738,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:BuildingCenters") {
+                                  } else if (testName === "cite:BuildingCenters") {
                                     $('#BuildingCenters_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#BuildingCenters_img').attr("src").indexOf('warning') > -1) {
@@ -761,10 +759,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Buildings") {
+                                  } else if (testName === "cite:Buildings") {
                                     $('#Buildings_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Buildings_img').attr("src").indexOf('warning') > -1) {
@@ -785,10 +780,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:DividedRoutes") {
+                                  } else if (testName === "cite:DividedRoutes") {
                                     $('#DividedRoutes_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#DividedRoutes_img').attr("src").indexOf('warning') > -1) {
@@ -809,10 +801,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Forests") {
+                                  } else if (testName === "cite:Forests") {
                                     $('#Forests_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Forests_img').attr("src").indexOf('warning') > -1) {
@@ -833,10 +822,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Lakes") {
+                                  } else if (testName === "cite:Lakes") {
                                     $('#Lakes_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Lakes_img').attr("src").indexOf('warning') > -1) {
@@ -857,10 +843,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:MapNeatline") {
+                                  } else if (testName === "cite:MapNeatline") {
                                     $('#MapNeatline_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#MapNeatline_img').attr("src").indexOf('warning') > -1) {
@@ -881,10 +864,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:NamedPlaces") {
+                                  } else if (testName === "cite:NamedPlaces") {
                                     $('#NamedPlaces_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#NamedPlaces_img').attr("src").indexOf('warning') > -1) {
@@ -905,10 +885,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Ponds") {
+                                  } else if (testName === "cite:Ponds") {
                                     $('#Ponds_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Ponds_img').attr("src").indexOf('warning') > -1) {
@@ -929,10 +906,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:RoadSegments") {
+                                  } else if (testName === "cite:RoadSegments") {
                                     $('#RoadSegments_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#RoadSegments_img').attr("src").indexOf('warning') > -1) {
@@ -953,10 +927,7 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  }
-                                }
-                                if (jsonData.TEST[j] !== undefined) {
-                                  if (jsonData.TEST[j].Name === "cite:Streams") {
+                                  } else if (testName === "cite:Streams") {
                                     $('#Streams_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Streams_img').attr("src").indexOf('warning') > -1) {
@@ -978,7 +949,7 @@
                                     id++;
                                     j++;
                                   }
-                                }
+                                  }
                                 if (($('#Autos_result').text() == '') || ($('#BasicPolygons_result').text() == '') || ($('#Bridges_result').text() == '') || ($('#BuildingCenters_result').text() == '') || ($('#Buildings_result').text() == '') || ($('#DividedRoutes_result').text() == '') || ($('#Forests_result').text() == '') || ($('#Lakes_result').text() == '') || ($('#MapNeatline_result').text() == '') || ($('#NamedPlaces_result').text() == '') || ($('#Ponds_result').text() == '') || ($('#RoadSegments_result').text() == '') || ($('#Streams_result').text() == '')) {
                                   if ($('#WMS-Client-result').attr("src").indexOf('fail') == -1) {
                                    $('#WMS-Client-result').attr("src", "../../../../images/fail_map.png");
@@ -997,6 +968,7 @@
                                   }
                                 }
                                 method++;
+                                }
                               },
                               error: function(jqXHR, textStatus, errorThrown) {
                                 $('#show').text("");

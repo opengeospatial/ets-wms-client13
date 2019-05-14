@@ -10,7 +10,10 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:main="urn:wms_client_test_suite/main"
     xmlns:basic="urn:wms_client_test_suite/basic_elements"
-    xmlns:gm="urn:wms_client_test_suite/GetMap">
+    xmlns:gm="urn:wms_client_test_suite/GetMap"
+    xmlns:tec="java:com.occamlab.te.TECore"
+    xmlns:ctlu="java:com.occamlab.te.spi.jaxrs.resources.wmsclient.CtlUtils"
+    xmlns:te="http://www.occamlab.com/te">
 
     <ctl:test name="gm:check-GetMap-request">
         <ctl:param name="request"/>
@@ -164,13 +167,13 @@
                     <ctl:with-param name="list" select="$request/ctl:param[fn:upper-case(@name)='LAYERS']"/>
                 </ctl:call-function>
             </xsl:variable>
-            <!-- Get the run Get Map Layer Name -->
-            <xsl:variable name="dir" select="concat(substring-after(ctl:getSessionDir(),'file:'),'/test_data/Get-Map-Layer.xml')"/>
-            <xsl:result-document href="{$dir}">
-                <Layers>
-                    <xsl:copy-of select="$layer-values" />
-                </Layers>
-            </xsl:result-document>
+             <xsl:variable name="layers">
+	             <Layers>
+	                  <xsl:copy-of select="$layer-values" />
+	             </Layers>
+             </xsl:variable>
+            <xsl:variable name="sessionDir" select="substring-after(ctl:getSessionDir(),'file:')"/>
+            <xsl:value-of select="ctlu:storeRequestedLayers($sessionDir, $layers)" />
             <xsl:for-each select="$layer-values/value">
                 <xsl:variable name="value" select="string(.)"/>
                 <xsl:if test="not($root-layer/descendant-or-self::wms:Layer[wms:Name=$value])">
