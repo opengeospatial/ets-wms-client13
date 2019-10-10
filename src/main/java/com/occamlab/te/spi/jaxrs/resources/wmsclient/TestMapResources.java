@@ -66,8 +66,8 @@ public class TestMapResources {
           @QueryParam("sessionID") String sessionID, @QueryParam("modifiedTime") String modifiedTime) throws IOException, JSONException, ParserConfigurationException, SAXException {
 
     File basePath = SetupOptions.getBaseConfigDirectory();
-    String xmlFile = basePath + "/users/" + userId + "/" + sessionID
-        + "/test_data/Get-Map-Layer-New.xml";
+    String xmlFile = basePath + File.separator + "users" + File.separator + userId + File.separator + sessionID
+        + File.separator + "test_data" + File.separator + File.separator + "Get-Map-Layer-New.xml";
 
     DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
     // This is the PRIMARY defense. If DTDs (doctypes) are disallowed, almost all XML entity attacks are prevented
@@ -75,8 +75,8 @@ public class TestMapResources {
     String FEATURE = "http://apache.org/xml/features/disallow-doctype-decl";
     docBuilderFactory.setFeature(FEATURE, true);
     DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-//Get-Map_layer.xml file contain all layer names which are run by Get-Map method.
-    Document mapLayerDocument = docBuilder.parse(new File(FilenameUtils.normalize(xmlFile) + "/Get-Map-Layer.xml"));
+//Get-Map-layer-New.xml file contain all layer names which are run by Get-Map method.
+    Document mapLayerDocument = docBuilder.parse(new File(xmlFile));
 
     JSONObject jsonObj = new JSONObject();
 
