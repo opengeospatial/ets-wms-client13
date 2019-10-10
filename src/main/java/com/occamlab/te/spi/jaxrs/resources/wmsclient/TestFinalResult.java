@@ -1,6 +1,8 @@
 package com.occamlab.te.spi.jaxrs.resources.wmsclient;
 
 import com.occamlab.te.SetupOptions;
+import org.apache.commons.io.FilenameUtils;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -43,7 +45,7 @@ public class TestFinalResult {
 
     //Get the Final result from file which save after stop button click.
     //Used bufferedReader to get the data from file.
-    InputStream inputStreamFilePath = new FileInputStream(new File(pathAddress + File.separator + "finalResult.txt"));
+    InputStream inputStreamFilePath = new FileInputStream(new File(FilenameUtils.normalize(pathAddress) + File.separator + "finalResult.txt"));
     BufferedReader fileReader = new BufferedReader(new InputStreamReader(inputStreamFilePath));
     String lineReader;
     String finalResult = "";

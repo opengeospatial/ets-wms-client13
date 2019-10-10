@@ -28,6 +28,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import org.apache.commons.io.FilenameUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -68,12 +69,14 @@ public class TestMapResources {
     String xmlFile = basePath + "/users/" + userId + "/" + sessionID
         + "/test_data/Get-Map-Layer-New.xml";
 
-    DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory
-        .newInstance();
+    DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+    // This is the PRIMARY defense. If DTDs (doctypes) are disallowed, almost all XML entity attacks are prevented
+    // Xerces 2 only - http://xerces.apache.org/xerces2-j/features.html#disallow-doctype-decl
+    String FEATURE = "http://apache.org/xml/features/disallow-doctype-decl";
+    docBuilderFactory.setFeature(FEATURE, true);
     DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-    // Get-Map_layer.xml file contain all layer names which are run by Get-Map
-    // method.
-    Document mapLayerDocument = docBuilder.parse(new File(xmlFile));
+//Get-Map_layer.xml file contain all layer names which are run by Get-Map method.
+    Document mapLayerDocument = docBuilder.parse(new File(FilenameUtils.normalize(xmlFile) + "/Get-Map-Layer.xml"));
 
     JSONObject jsonObj = new JSONObject();
 
@@ -111,7 +114,7 @@ public class TestMapResources {
       jsonArr.put(mapLayerTestObject);
     }
     jsonObj.put("TEST", jsonArr);
-    return jsonObj.toString();
+    return FilenameUtils.normalize(jsonObj.toString());
   }
 
   /**
@@ -135,7 +138,7 @@ public class TestMapResources {
     File basePath=SetupOptions.getBaseConfigDirectory();
 // Save data into file which comes through Rest end point.
     String pathAddress = basePath + File.separator + "users" + File.separator + userId + File.separator + sessionID + File.separator + "test_data";
-    File fulePath = new File(pathAddress, File.separator + "finalResult.txt");
+    File fulePath = new File(FilenameUtils.normalize(pathAddress), File.separator + "finalResult.txt");
     OutputStreamWriter writerBefore = new OutputStreamWriter(
             new FileOutputStream(fulePath, true), "UTF-8");
     try (BufferedWriter fbwBefore = new BufferedWriter(writerBefore)) {
