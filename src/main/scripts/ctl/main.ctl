@@ -196,13 +196,13 @@
                 </div>
                 <div id="map_result">
                             
-                  <div id="Autos" style="margin-left:60px;">
+                  <!-- <div id="Autos" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Autos_img" align="middle" alt="Begin" ></img>
                     <b>cite:Autos</b>
                   </div>
                             
                   <div id="Autos_result" style="margin-left:80px;">
-                  </div>
+                  </div> -->
                             
                   <div id="BasicPolygons" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="BasicPolygons_img" align="middle" alt="Begin" ></img>
@@ -219,11 +219,11 @@
                             
                   <div id="Bridges_result" style="margin-left:80px;">
                   </div>
-                            
+                  <!--           
                   <div id="BuildingCenters" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="BuildingCenters_img" align="middle" alt="Begin" ></img>
                     <b>cite:BuildingCenters</b>
-                  </div>
+                  </div> -->
                             
                   <div id="BuildingCenters_result" style="margin-left:80px;">
                   </div>
@@ -416,14 +416,14 @@
                 "node_name":"GetMap"
               };
               wmsClient.push(data);
-              var data = {
+              /* var data = {
                 "id": 4,
                 "Name": "cite:Autos",
                 "ParentID": 3,
                 "image": "../../../../images/warning.png",
                 "node_id": "4__result",
                 "node_name":"cite:Autos"
-              };
+              }; */
               wmsClient.push(data);
               var data = {
                 "id": 5,
@@ -442,6 +442,7 @@
                 "node_id": "6__result",
                 "node_name":"cite:Bridges"
               };
+              /*
               wmsClient.push(data);
               var data = {
                 "id": 7,
@@ -450,7 +451,7 @@
                 "image": "../../../../images/warning.png",
                 "node_id": "7__result",
                 "node_name":"cite:BuildingCenters"
-              };
+              }; */
               wmsClient.push(data);
               var data = {
                 "id": 8,
@@ -675,7 +676,8 @@
                               for ( var k = 0; k &lt; Object.keys(jsonData.TEST).length; k++){  
                                 var testName = jsonData.TEST[k].Name;
                                 if (jsonData.TEST[k] !== undefined) {
-                                  if (testName === "cite:Autos") {
+                                  
+                                 /* if (testName === "cite:Autos") {
                                     $('#Autos_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Autos_img').attr("src").indexOf('warning') > -1) {
@@ -696,7 +698,8 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  } else if (testName === "cite:BasicPolygons") {
+                                  } else */
+                                  if (testName === "cite:BasicPolygons") {
                                     $('#BasicPolygons_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#BasicPolygons_img').attr("src").indexOf('warning') > -1) {
@@ -738,7 +741,8 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  } else if (testName === "cite:BuildingCenters") {
+                                  } 
+                                  /* else if (testName === "cite:BuildingCenters") {
                                     $('#BuildingCenters_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#BuildingCenters_img').attr("src").indexOf('warning') > -1) {
@@ -759,7 +763,8 @@
                                     wmsClient[0].image = success;
                                     id++;
                                     j++;
-                                  } else if (testName === "cite:Buildings") {
+                                  } else */
+                                  if (testName === "cite:Buildings") {
                                     $('#Buildings_result').append($('<p style="margin-bottom:0px; margin-top:0px;"> 
                                       <img src = "' + success + '" > </img>' + "  Request " + method + " (" + time + ") .....Passed" + '</p > '));
                                     if ($('#Buildings_img').attr("src").indexOf('warning') > -1) {
