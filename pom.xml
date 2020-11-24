@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>ets-wms-client13</artifactId>
   <groupId>org.opengis.cite</groupId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.4</version>
   <name>Conformance Test Suite - OGC Web Map Service Client</name>
   <description>
   Verifies conformance of implementations to OGC Web Map Service Client.
@@ -18,7 +18,7 @@
     <url>https://github.com/opengeospatial/ets-wms-client13</url>
     <connection>scm:git:https://github.com/opengeospatial/ets-wms-client13.git</connection>
     <developerConnection>scm:git:git@github.com:opengeospatial/ets-wms-client13.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>1.4</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issue Tracker</system>
