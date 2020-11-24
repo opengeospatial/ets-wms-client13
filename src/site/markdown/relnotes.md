@@ -1,5 +1,13 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
+### 1.4 (2020-11-24)
+  - [#51](https://github.com/opengeospatial/ets-wms-client13/pull/51) - Bump junit from 4.12 to 4.13.1
+  - [#47](https://github.com/opengeospatial/ets-wms-client13/issues/47) - Multiple layers that the test expects are missing in the test WMS service
+  - [#45](https://github.com/opengeospatial/ets-wms-client13/pull/45) - Updated the dependency commons-io and fixed PR by removing some changes.
+  - [#43](https://github.com/opengeospatial/ets-wms-client13/issues/43) - Enable creation of Docker Image
+  - [#37](https://github.com/opengeospatial/ets-wms-client13/issues/37) - Adding multiple layers in QGIS is not recognized
+  - [#32](https://github.com/opengeospatial/ets-wms-client13/issues/32) - Layer cite:Terrain not provided
+
 ### 1.3 (2018-01-26)
   - [#27](https://github.com/opengeospatial/ets-wms-client13/issues/27) - Result view (tree) is missing
   - [#24](https://github.com/opengeospatial/ets-wms-client13/issues/24) - The WMS client test fails to capture all GetMap requests
