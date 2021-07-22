@@ -4,11 +4,18 @@
   <artifactId>ets-wms-client13</artifactId>
   <groupId>org.opengis.cite</groupId>
   <version>1.5-SNAPSHOT</version>
+
   <name>Conformance Test Suite - OGC Web Map Service Client</name>
   <description>
   Verifies conformance of implementations to OGC Web Map Service Client.
   </description>
   <url>https://github.com/opengeospatial/ets-wms-client13</url>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://opensource.org/licenses/Apache-2.0</url>
+    </license>
+  </licenses>
 
   <organization>
     <name>Open Geospatial Consortium</name>
