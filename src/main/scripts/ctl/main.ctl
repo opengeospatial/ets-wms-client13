@@ -42,8 +42,8 @@
             
     <xsl:variable name="wms-url" >
      <xsl:choose>
-       <xsl:when test="doc-available('http://cite.deegree.org/deegree-webservices-3.3.14-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities')">
-         <xsl:value-of select="'http://cite.deegree.org/deegree-webservices-3.3.14-2/services/wms?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'"/>
+       <xsl:when test="doc-available('http://cite.deegree.org/deegree-webservices-3.4.16/services/wms130?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities')">
+         <xsl:value-of select="'http://cite.deegree.org/deegree-webservices-3.4.16/services/wms130?service=WMS&amp;version=1.3.0&amp;request=GetCapabilities'"/>
        </xsl:when>
        <xsl:when test="doc-available('http://cite.demo.opengeo.org:8080/geoserver_wms13/wms?service=WMS&amp;request=GetCapabilities&amp;version=1.3.0')">
          <xsl:value-of select="'http://cite.demo.opengeo.org:8080/geoserver_wms13/wms?service=WMS&amp;request=GetCapabilities&amp;version=1.3.0'"/>
