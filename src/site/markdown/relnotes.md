@@ -1,5 +1,11 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
+### 1.5 (2021-07-30)
+
+  - [#57](https://github.com/opengeospatial/ets-wms-client13/issues/57) - Update deegree service to v3.4.16
+  - [#53](https://github.com/opengeospatial/ets-wms-client13/issues/53) - Artifacts cannot be published to Central Maven Repository
+  - [#55](https://github.com/opengeospatial/ets-wms-client13/pull/55) - Set Docker TEAM Engine version to 5.4.1
+
 ### 1.4 (2020-11-24)
   - [#51](https://github.com/opengeospatial/ets-wms-client13/pull/51) - Bump junit from 4.12 to 4.13.1
   - [#47](https://github.com/opengeospatial/ets-wms-client13/issues/47) - Multiple layers that the test expects are missing in the test WMS service
