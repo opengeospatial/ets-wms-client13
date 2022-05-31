@@ -1,5 +1,11 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
+### 1.6 (2022-05-31)
+
+  - [#61](https://github.com/opengeospatial/ets-wms-client13/issues/61) - Update URL to deegree reference implementation
+  - [#62](https://github.com/opengeospatial/ets-wms-client13/pull/62) - Bump gson from 2.2.2 to 2.8.9
+  - [#56](https://github.com/opengeospatial/ets-wms-client13/pull/56) - Bump commons-io from 2.4 to 2.7
+
 ### 1.5 (2021-07-30)
 
   - [#57](https://github.com/opengeospatial/ets-wms-client13/issues/57) - Update deegree service to v3.4.16
