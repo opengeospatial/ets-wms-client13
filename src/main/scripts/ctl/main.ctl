@@ -955,7 +955,7 @@
                                     j++;
                                   }
                                   }
-                                if (($('#Autos_result').text() == '') || ($('#BasicPolygons_result').text() == '') || ($('#Bridges_result').text() == '') || ($('#BuildingCenters_result').text() == '') || ($('#Buildings_result').text() == '') || ($('#DividedRoutes_result').text() == '') || ($('#Forests_result').text() == '') || ($('#Lakes_result').text() == '') || ($('#MapNeatline_result').text() == '') || ($('#NamedPlaces_result').text() == '') || ($('#Ponds_result').text() == '') || ($('#RoadSegments_result').text() == '') || ($('#Streams_result').text() == '')) {
+                                if (($('#BasicPolygons_result').text() == '') || ($('#Bridges_result').text() == '') || ($('#Buildings_result').text() == '') || ($('#DividedRoutes_result').text() == '') || ($('#Forests_result').text() == '') || ($('#Lakes_result').text() == '') || ($('#MapNeatline_result').text() == '') || ($('#NamedPlaces_result').text() == '') || ($('#Ponds_result').text() == '') || ($('#RoadSegments_result').text() == '') || ($('#Streams_result').text() == '')) {
                                   if ($('#WMS-Client-result').attr("src").indexOf('fail') == -1) {
                                    $('#WMS-Client-result').attr("src", "../../../../images/fail_map.png");
                                   }
