@@ -1,5 +1,9 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
+### 1.6.1 (2024-03-19)
+
+  - [#74](https://github.com/opengeospatial/ets-wms-client13/issues/74) - Test suite does not work on Beta and Production as remote endpoints must be updated
+
 ### 1.6 (2022-05-31)
 
   - [#61](https://github.com/opengeospatial/ets-wms-client13/issues/61) - Update URL to deegree reference implementation
