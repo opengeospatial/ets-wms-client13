@@ -223,10 +223,10 @@
                   <div id="BuildingCenters" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="BuildingCenters_img" align="middle" alt="Begin" ></img>
                     <b>cite:BuildingCenters</b>
-                  </div> -->
+                  </div>
                             
                   <div id="BuildingCenters_result" style="margin-left:80px;">
-                  </div>
+                  </div> -->
                             
                   <div id="Buildings" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Buildings_img" align="middle" alt="Begin" ></img>
@@ -423,8 +423,9 @@
                 "image": "../../../../images/warning.png",
                 "node_id": "4__result",
                 "node_name":"cite:Autos"
-              }; */
+              };
               wmsClient.push(data);
+               */
               var data = {
                 "id": 5,
                 "Name": "cite:BasicPolygons",
