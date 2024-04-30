@@ -1,5 +1,11 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
+### 1.7 (2024-04-30)
+
+  - [#68](https://github.com/opengeospatial/ets-wms-client13/issues/68) - The WMS Client test does not put "Perform GetMap request for all the layers" on passed when all child tests have been passed
+  - [#70](https://github.com/opengeospatial/ets-wms-client13/pull/70) - Upgrade TEAM Engine dependencies and update URL to used remote service
+  - [#76](https://github.com/opengeospatial/ets-wms-client13/pull/76) - Exclude old versions of xerces and junit
+
 ### 1.6.1 (2024-03-19)
 
   - [#74](https://github.com/opengeospatial/ets-wms-client13/issues/74) - Test suite does not work on Beta and Production as remote endpoints must be updated
