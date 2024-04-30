@@ -44,7 +44,8 @@
     <ets-code>wms-client</ets-code>
     <spec-version>1.3.0</spec-version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <docker.teamengine.version>5.4.1</docker.teamengine.version>
+    <teamengine.version>5.7</teamengine.version>
+    <docker.teamengine.version>5.7</docker.teamengine.version>
   </properties>
 
   <build>
@@ -306,12 +307,12 @@
     <dependency>
       <groupId>org.opengis.cite.teamengine</groupId>
       <artifactId>teamengine-spi</artifactId>
-      <version>5.3</version>
+      <version>${teamengine.version}</version>
     </dependency>
     <dependency>
       <groupId>org.opengis.cite.teamengine</groupId>
       <artifactId>teamengine-core</artifactId>
-      <version>5.3</version>
+      <version>${teamengine.version}</version>
     </dependency>
     <dependency>
       <groupId>com.googlecode.json-simple</groupId>
@@ -331,14 +332,6 @@
       <version>2.8.9</version>
       <type>jar</type>
     </dependency>
-    <!--
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.16</version>
-      <scope>runtime</scope>
-    </dependency>
-    -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
