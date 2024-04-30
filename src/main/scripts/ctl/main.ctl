@@ -223,10 +223,10 @@
                   <div id="BuildingCenters" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="BuildingCenters_img" align="middle" alt="Begin" ></img>
                     <b>cite:BuildingCenters</b>
-                  </div> -->
+                  </div>
                             
                   <div id="BuildingCenters_result" style="margin-left:80px;">
-                  </div>
+                  </div> -->
                             
                   <div id="Buildings" style="margin-left:60px;">
                     <img src="../../../../images/warning.png" id="Buildings_img" align="middle" alt="Begin" ></img>
@@ -423,8 +423,9 @@
                 "image": "../../../../images/warning.png",
                 "node_id": "4__result",
                 "node_name":"cite:Autos"
-              }; */
+              };
               wmsClient.push(data);
+               */
               var data = {
                 "id": 5,
                 "Name": "cite:BasicPolygons",
@@ -955,7 +956,7 @@
                                     j++;
                                   }
                                   }
-                                if (($('#Autos_result').text() == '') || ($('#BasicPolygons_result').text() == '') || ($('#Bridges_result').text() == '') || ($('#BuildingCenters_result').text() == '') || ($('#Buildings_result').text() == '') || ($('#DividedRoutes_result').text() == '') || ($('#Forests_result').text() == '') || ($('#Lakes_result').text() == '') || ($('#MapNeatline_result').text() == '') || ($('#NamedPlaces_result').text() == '') || ($('#Ponds_result').text() == '') || ($('#RoadSegments_result').text() == '') || ($('#Streams_result').text() == '')) {
+                                if (($('#BasicPolygons_result').text() == '') || ($('#Bridges_result').text() == '') || ($('#Buildings_result').text() == '') || ($('#DividedRoutes_result').text() == '') || ($('#Forests_result').text() == '') || ($('#Lakes_result').text() == '') || ($('#MapNeatline_result').text() == '') || ($('#NamedPlaces_result').text() == '') || ($('#Ponds_result').text() == '') || ($('#RoadSegments_result').text() == '') || ($('#Streams_result').text() == '')) {
                                   if ($('#WMS-Client-result').attr("src").indexOf('fail') == -1) {
                                    $('#WMS-Client-result').attr("src", "../../../../images/fail_map.png");
                                   }
