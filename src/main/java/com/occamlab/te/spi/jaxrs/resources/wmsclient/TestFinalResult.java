@@ -1,8 +1,5 @@
 package com.occamlab.te.spi.jaxrs.resources.wmsclient;
 
-import com.occamlab.te.SetupOptions;
-import org.apache.commons.io.FilenameUtils;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,10 +7,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+
+import org.apache.commons.io.FilenameUtils;
+
+import com.occamlab.te.SetupOptions;
+
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 
 /**
  * Supports testing of WMS 1.3 client implementations.
