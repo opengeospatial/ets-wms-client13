@@ -166,7 +166,7 @@ public class StoreRunResources {
 			if (null != jsonArrTestDetail && jsonArrTestDetail.length() > 0) {
 				for (int index = 0; index < jsonArrTestDetail.length(); index++) {
 					JSONObject objec = jsonArrTestDetail.getJSONObject(index);
-					if ("1".equals(objec.getString("Indent"))) {
+					if ("1".equals(String.valueOf(objec.getInt("Indent")))) {
 						DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 						factory.setNamespaceAware(true);
 						DocumentBuilder builder = factory.newDocumentBuilder();
