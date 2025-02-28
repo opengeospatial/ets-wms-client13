@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd">
+      xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd">
 
   <skin>
     <groupId>org.apache.maven.skins</groupId>
@@ -24,10 +24,10 @@
       <item name="Issues" href="https://github.com/opengeospatial/${project.artifactId}/issues"/>
     </links>
     <menu name="Documentation">
-      <item href="index.html" name="Overview" />
-      <item href="relnotes.html" name="Release Notes" />
+      <item href="index.html" name="Overview"/>
+      <item href="relnotes.html" name="Release Notes"/>
     </menu>
-    <menu ref="reports" />
+    <menu ref="reports"/>
 
   </body>
 </site>
