@@ -1,5 +1,11 @@
 ## WMS Client 1.3.0 Test Suite - Release Notes
 
+### 1.8 (2025-03-07)
+
+Attention: Java 17 and Tomcat 10.1 are required.
+
+  - [#77](https://github.com/opengeospatial/ets-wms-client13/issues/77) - Migrate test suite to TEAM Engine 6 (Java 17)
+
 ### 1.7 (2024-04-30)
 
   - [#68](https://github.com/opengeospatial/ets-wms-client13/issues/68) - The WMS Client test does not put "Perform GetMap request for all the layers" on passed when all child tests have been passed
